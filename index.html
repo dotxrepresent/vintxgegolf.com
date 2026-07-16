@@ -15,10 +15,27 @@
 <meta name="description" content="Vintxge Golf. Bespoke golf apparel and limited drops, by enquiry only.">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://vintxgegolf.com/">
+
+<!-- Favicon -->
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<link rel="manifest" href="site.webmanifest">
+
+<!-- Open Graph -->
 <meta property="og:type" content="website">
 <meta property="og:title" content="Vintxge Golf">
 <meta property="og:description" content="Bespoke golf apparel and limited drops, by enquiry only.">
 <meta property="og:url" content="https://vintxgegolf.com/">
+<meta property="og:image" content="https://vintxgegolf.com/hero-opt.jpeg">
+<meta property="og:site_name" content="Vintxge Golf">
+<meta property="og:locale" content="en_GB">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Vintxge Golf">
+<meta name="twitter:description" content="Bespoke golf apparel and limited drops, by enquiry only.">
+<meta name="twitter:image" content="https://vintxgegolf.com/hero-opt.jpeg">
 
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -156,7 +173,7 @@ section{padding:5.5rem 3rem}
 @media(min-width:700px){.hero-frame{aspect-ratio:16/9}}
 .hero-frame img{
   width:100%;height:100%;object-fit:cover;
-  object-position:center 20%;
+  object-position:center 65%;
   display:block;
 }
 .hero-frame::after{
@@ -287,27 +304,30 @@ section{padding:5.5rem 3rem}
 /* ============ FOOTER — LIGHT ============ */
 footer{
   background:var(--cream);color:var(--black);
-  padding:3.5rem 3rem 2rem;border-top:1px solid var(--grey);
-  display:flex;flex-wrap:wrap;gap:2.5rem;justify-content:space-between;
+  padding:4rem 3rem 2rem;
+  border-top:1px solid var(--grey);
 }
-@media(max-width:760px){footer{flex-direction:column}}
-.f-col h4{font-family:var(--mono);font-size:0.6rem;letter-spacing:.08em;text-transform:uppercase;color:#888070;margin-bottom:1rem}
+.f-inner{max-width:1280px;margin:0 auto}
+footer .f-brand{margin-bottom:3rem}
+footer .f-cols{display:flex;gap:4rem;margin-bottom:3rem}
+@media(max-width:600px){footer .f-cols{gap:2.5rem;flex-wrap:wrap}}
+.f-col h4{font-family:var(--mono);font-size:0.6rem;letter-spacing:.1em;text-transform:uppercase;color:#888070;margin-bottom:1rem}
 .f-col ul{list-style:none}
-.f-col li{margin-bottom:.6rem}
-.f-col a{font-size:0.86rem;color:#555048;transition:color .2s}
+.f-col li{margin-bottom:.55rem}
+.f-col a{font-size:0.88rem;color:#555048;transition:color .2s}
 .f-col a:hover{color:var(--black)}
-.f-mark{display:flex;align-items:center;gap:.8rem;margin-bottom:.9rem}
-.f-mark img{height:24px}
-.f-mark .bar{width:1px;height:18px;background:var(--grey)}
-.f-mark .word{font-family:var(--serif);font-size:1rem;color:var(--black)}
-.f-tagline{font-size:0.84rem;color:#888070;max-width:260px;line-height:1.7}
+.f-mark{display:flex;align-items:center;gap:.8rem;margin-bottom:.8rem}
+.f-mark img{height:22px}
+.f-mark .bar{width:1px;height:16px;background:var(--grey)}
+.f-mark .word{font-family:var(--serif);font-size:0.95rem;color:var(--black)}
+.f-tagline{font-size:0.84rem;color:#888070;line-height:1.7}
 .f-bottom{
-  width:100%;margin-top:2.6rem;padding-top:1.5rem;border-top:1px solid var(--grey);
+  padding-top:1.5rem;border-top:1px solid var(--grey);
   display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;
 }
-@media(max-width:760px){.f-bottom{flex-direction:column;align-items:flex-start}}
-.f-copy{font-family:var(--mono);font-size:0.62rem;color:#888070}
-.f-built{display:flex;align-items:center;gap:.5rem;font-family:var(--mono);font-size:0.62rem;letter-spacing:.04em;text-transform:uppercase;color:#888070;transition:color .2s}
+@media(max-width:600px){footer{padding:3rem 1.5rem 1.5rem}.f-bottom{flex-direction:column;align-items:flex-start}}
+.f-copy{font-family:var(--mono);font-size:0.62rem;color:#888070;letter-spacing:.04em}
+.f-built{display:flex;align-items:center;gap:.5rem;font-family:var(--mono);font-size:0.62rem;letter-spacing:.06em;text-transform:uppercase;color:#888070;transition:color .2s}
 .f-built img{width:16px;height:16px;border-radius:50%}
 .f-built:hover{color:var(--gold)}
 
@@ -392,9 +412,9 @@ footer{
     <h2 class="s-h2">Golf's traditions, <i>worn differently.</i></h2>
     <div class="brand-grid" style="margin-top:2.4rem">
       <div class="brand-body">
-        <p>Vintxge Golf began in 2022 with a simple premise — that the game's traditions and a more modern, streetwise sense of style were not in conflict.</p>
-        <p>We value the prestige of golf as it's always been. We also pay attention to how it's actually worn today, on and off the course. Vintxge sits in that space — hence the X. Our own twist on the word, and on the game.</p>
-        <p>Founded by Matthew Lynas and Craig Leith. Self-funded from the first stitch, with no agency and no outside investment behind any of it.</p>
+        <p>Vintxge Golf was founded in 2022 on a straightforward idea — that the traditions of golf and a more considered, streetwise approach to how it's worn are not in conflict.</p>
+        <p>We respect the game's heritage. We also pay close attention to how it's actually played and dressed today. Vintxge sits in that space. Hence the X — our own mark on the word, and on the game.</p>
+        <p>Founded by Matthew Lynas and Craig Leith. Self-funded throughout, with no agency and no outside investment.</p>
         <div class="scorecard">
           <div class="sc-row"><span>Founded</span><span>2022</span></div>
           <div class="sc-row"><span>Shipped to</span><span>10+ countries</span></div>
@@ -417,7 +437,7 @@ footer{
       <span class="ct">02</span>
     </div>
     <h2 class="s-h2">A record, <i>not a pitch.</i></h2>
-    <p class="s-intro" style="margin-bottom:2.6rem">Four things that happened. No staging.</p>
+    <p class="s-intro" style="margin-bottom:2.6rem">Four things that actually happened.</p>
     <div class="edit-grid">
       <div class="edit-card">
         <div class="frame"><img src="deeside-proshop.jpeg" alt="VX pro shop at Deeside Golf Club" loading="lazy"></div>
@@ -452,12 +472,12 @@ footer{
         <img src="qz-IMG_3809-opt.jpeg" alt="VX QZ detail — craft and finish" style="width:100%;aspect-ratio:4/5;object-fit:cover;object-position:center;display:block">
       </div>
       <div>
-        <p class="s-intro">No catalogue. No published price. No standard lead time. Every piece is specified and costed against the brief in front of us — for individuals, clubs, Pennant teams and corporate days alike.</p>
+        <p class="s-intro">No catalogue. No published price. No fixed lead time. Every piece is specified and costed to the brief — for individuals, golf clubs, Pennant teams and corporate days.</p>
         <div class="comm-rows">
-          <div class="comm-row"><span class="n">i.</span><p>Custom colourways and embroidery, worked through with you directly</p></div>
+          <div class="comm-row"><span class="n">i.</span><p>Custom colourways and embroidery, developed directly with you</p></div>
           <div class="comm-row"><span class="n">ii.</span><p>Club, Pennant team and corporate golf day kit, quoted per order</p></div>
-          <div class="comm-row"><span class="n">iii.</span><p>Personal pieces for the golfer who isn't buying off a shelf</p></div>
-          <div class="comm-row"><span class="n">iv.</span><p>Price and timeline confirmed once we understand what's needed — never before</p></div>
+          <div class="comm-row"><span class="n">iii.</span><p>Individual pieces for the golfer who won't settle for off-the-shelf</p></div>
+          <div class="comm-row"><span class="n">iv.</span><p>Pricing and lead time confirmed once we understand the brief — not before</p></div>
         </div>
         <a href="#contact" class="text-link">Start a commission</a>
       </div>
@@ -472,26 +492,26 @@ footer{
       <span class="tag gold">Limited</span>
       <span class="ct">04</span>
     </div>
-    <h2 class="s-h2">Drops, by <i>enquiry.</i></h2>
-    <p class="s-intro" style="margin-bottom:2.8rem">Small-run pieces outside the commission line. Fixed counts, no public price. Members hear first.</p>
+    <h2 class="s-h2">Limited runs, <i>by enquiry.</i></h2>
+    <p class="s-intro" style="margin-bottom:2.8rem">Small-run pieces alongside the commission line. Fixed quantities, no public pricing. Members are notified first.</p>
     <div class="drops-grid">
       <div class="drop-card">
         <img src="sticks-flatlay-opt.jpeg" alt="VX Alignment Sticks" style="width:100%;aspect-ratio:4/5;object-fit:cover;object-position:center;display:block;margin-bottom:1.2rem">
-        <span class="drop-status" style="margin-top:1.2rem">Arriving — enquire to reserve</span>
+        <span class="drop-status">Available — enquire to reserve</span>
         <div class="drop-name">Alignment Sticks</div>
-        <p class="drop-desc">The first piece of this new chapter. Limited run.</p>
+        <p class="drop-desc">Black and white or Isle Blue colourway. Branded tip. Limited run.</p>
       </div>
       <div class="drop-card">
-        <img src="qz-IMG_3821-opt.jpeg" alt="VX QZ Sample — stripe colourway" style="width:100%;aspect-ratio:4/5;object-fit:cover;object-position:center top;display:block;margin-bottom:1.2rem">
-        <span class="drop-status" style="margin-top:1.2rem">Sampling — enquire for access</span>
-        <div class="drop-name">Sample Jumper</div>
-        <p class="drop-desc">An early run, limited sizing. First word to members.</p>
+        <img src="qz-IMG_3821-opt.jpeg" alt="VX QZ Sample" style="width:100%;aspect-ratio:4/5;object-fit:cover;object-position:center top;display:block;margin-bottom:1.2rem">
+        <span class="drop-status">Sampling — enquire for access</span>
+        <div class="drop-name">Quarter-Zip</div>
+        <p class="drop-desc">Stripe performance quarter-zip. Multiple colourways. Sizes limited.</p>
       </div>
       <div class="drop-card">
-        <img src="qz-IMG_3836-opt.jpeg" alt="VX QZ Sample — pink stripe colourway" style="width:100%;aspect-ratio:4/5;object-fit:cover;object-position:center top;display:block;margin-bottom:1.2rem">
-        <span class="drop-status" style="margin-top:1.2rem">Final run — members first</span>
-        <div class="drop-name">Archive Hoodie</div>
-        <p class="drop-desc">What's left of the original run. Once it's gone, it's retired.</p>
+        <img src="qz-IMG_3836-opt.jpeg" alt="VX QZ Sample" style="width:100%;aspect-ratio:4/5;object-fit:cover;object-position:center top;display:block;margin-bottom:1.2rem">
+        <span class="drop-status">Final units — members first</span>
+        <div class="drop-name">Performance Hoodie</div>
+        <p class="drop-desc">Original VX colourway. Remaining stock only — not being restocked.</p>
       </div>
     </div>
   </div>
@@ -505,24 +525,24 @@ footer{
       <span class="ct">05</span>
     </div>
     <h2 class="s-h2">First word, <i>always.</i></h2>
-    <p class="s-intro" style="margin-bottom:2.4rem">Membership means hearing about a drop or commission slot before anyone else does.</p>
+    <p class="s-intro" style="margin-bottom:2.4rem">Members receive advance notice of every drop and commission opening before anything is made public.</p>
     <div class="members-grid">
       <div class="tier">
         <div class="tier-name">Community</div>
         <div class="tier-price">No cost</div>
         <ul>
-          <li>Early notice on every drop</li>
-          <li>Access to members content</li>
-          <li>A direct line for general enquiries</li>
+          <li>Advance notice of every drop</li>
+          <li>Access to members-only content</li>
+          <li>Direct line for enquiries</li>
         </ul>
       </div>
       <div class="tier featured">
         <div class="tier-name">Inner Circle</div>
         <div class="tier-price">Apply for access</div>
         <ul>
-          <li>48-hour early access to every drop</li>
-          <li>Priority on commission slots</li>
-          <li>One personalisation credit a year</li>
+          <li>48-hour priority access to every drop</li>
+          <li>First call on commission slots</li>
+          <li>One personalisation credit per year</li>
           <li>Invited to VX events</li>
         </ul>
       </div>
@@ -537,10 +557,10 @@ footer{
       <span class="tag gold">Enquire</span>
       <span class="ct">06</span>
     </div>
-    <h2 class="s-h2">Tell us what <i>you're picturing.</i></h2>
+    <h2 class="s-h2">Get in touch.</h2>
     <div class="contact-grid" style="margin-top:2.4rem">
       <div class="contact-info">
-        <p>Every commission, drop reservation and membership enquiry starts here. We reply within 48 hours. Payment and final detail are agreed directly once we've talked it through.</p>
+        <p>Commission enquiries, drop reservations and membership applications all start here. We aim to respond within 48 hours. Payment and final terms are agreed directly.</p>
         <div class="contact-channel">
           <span class="lbl">Instagram</span>
           <a href="https://www.instagram.com/vintxgegolf/" target="_blank" rel="noopener noreferrer">@vintxgegolf</a>
@@ -566,17 +586,17 @@ footer{
             <option>Limited drop reservation</option>
             <option>Members Club</option>
             <option>Club / Pennant team / corporate order</option>
-            <option>Something else</option>
+            <option>General enquiry</option>
           </select>
         </div>
         <div>
-          <label for="message">What are you picturing</label>
+          <label for="message">Your enquiry</label>
           <textarea id="message" name="message" required></textarea>
         </div>
-        <button type="submit" class="form-submit">Send enquiry</button>
+        <button type="submit" class="form-submit">Send</button>
         <div class="f-success" id="fSuccess">
-          <b>Enquiry sent</b>
-          We'll be in touch within 48 hours. For anything urgent, DM @vintxgegolf on Instagram.
+          <b>Enquiry received.</b>
+          We'll be in touch within 48 hours. For anything urgent, message us on Instagram.
         </div>
       </form>
     </div>
@@ -585,35 +605,38 @@ footer{
 
 <!-- FOOTER — LIGHT -->
 <footer>
-  <div style="flex:1;min-width:200px">
+  <div class="f-brand">
     <div class="f-mark">
       <img src="vx-mark-black.png" alt="Vx">
       <span class="bar"></span>
       <span class="word">Vintxge Golf</span>
     </div>
-    <p class="f-tagline">Golf apparel, made to enquiry. Bespoke commissions and limited drops only.</p>
+    <p class="f-tagline">Golf apparel. Bespoke commissions<br>and limited drops, by enquiry only.</p>
   </div>
-  <div class="f-col">
-    <h4>Site</h4>
-    <ul>
-      <li><a href="#brand">The Brand</a></li>
-      <li><a href="#edit">The Edit</a></li>
-      <li><a href="#commission">Commission</a></li>
-      <li><a href="#drops">Drops</a></li>
-      <li><a href="#members">Members</a></li>
-    </ul>
-  </div>
-  <div class="f-col">
-    <h4>Connect</h4>
-    <ul>
-      <li><a href="https://www.instagram.com/vintxgegolf/" target="_blank" rel="noopener noreferrer">Instagram</a></li>
-      <li><a href="https://www.tiktok.com/@vintxgegolf" target="_blank" rel="noopener noreferrer">TikTok</a></li>
-      <li><a href="https://www.facebook.com/profile.php?id=61550872304245" target="_blank" rel="noopener noreferrer">Facebook</a></li>
-      <li><a href="mailto:hello@vintxgegolf.com">Email</a></li>
-    </ul>
+  <div class="f-cols">
+    <div class="f-col">
+      <h4>Navigate</h4>
+      <ul>
+        <li><a href="#brand">The Brand</a></li>
+        <li><a href="#edit">The Edit</a></li>
+        <li><a href="#commission">Commission</a></li>
+        <li><a href="#drops">Drops</a></li>
+        <li><a href="#members">Members</a></li>
+        <li><a href="#contact">Enquire</a></li>
+      </ul>
+    </div>
+    <div class="f-col">
+      <h4>Connect</h4>
+      <ul>
+        <li><a href="https://www.instagram.com/vintxgegolf/" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+        <li><a href="https://www.tiktok.com/@vintxgegolf" target="_blank" rel="noopener noreferrer">TikTok</a></li>
+        <li><a href="https://www.facebook.com/profile.php?id=61550872304245" target="_blank" rel="noopener noreferrer">Facebook</a></li>
+        <li><a href="mailto:vintxgegolf@outlook.com">vintxgegolf@outlook.com</a></li>
+      </ul>
+    </div>
   </div>
   <div class="f-bottom">
-    <span class="f-copy">© 2026 Vintxge Golf, United Kingdom</span>
+    <span class="f-copy">© 2026 Vintxge Golf · United Kingdom</span>
     <a href="https://dotxrepresentative.com" target="_blank" rel="noopener noreferrer" class="f-built">
       <img src="dotx-logo.png" alt="dot.x">
       Built by dot.x
