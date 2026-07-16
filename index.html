@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light only">
+<meta name="supported-color-schemes" content="light">
+<meta name="theme-color" content="#f5f0e8">
+<title>Vintxge Golf</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..500;1,9..144,400..500&family=Inter:wght@400;500&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
+
+<meta name="description" content="Vintxge Golf. Bespoke golf apparel and limited drops, by enquiry only.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://vintxgegolf.com/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Vintxge Golf">
+<meta property="og:description" content="Bespoke golf apparel and limited drops, by enquiry only.">
+<meta property="og:url" content="https://vintxgegolf.com/">
+
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+
+/* ============ 5-COLOUR PALETTE ============ */
+:root{
+  --white:#ffffff;
+  --black:#1a1a1a;
+  --cream:#f5f0e8;
+  --grey:#c8c2b4;
+  --gold:#b8963e;
+
+  --serif:'Fraunces',serif;
+  --body:'Inter',sans-serif;
+  --mono:'DM Mono',monospace;
+}
+
+/* light section colours */
+.light{ background:var(--cream); color:var(--black); }
+.light .sub    { color:#555048; }   /* readable dark grey on cream */
+.light .muted  { color:#888070; }   /* secondary info, still legible */
+.light .rule   { border-color:var(--grey); }
+
+/* dark section colours */
+.dark{ background:var(--black); color:var(--white); }
+.dark .sub     { color:#b0a898; }   /* readable light grey on black */
+.dark .muted   { color:#787060; }
+.dark .rule    { border-color:#3a3830; }
+
+html{
+  scroll-behavior:smooth;
+  color-scheme:light;
+  -webkit-text-size-adjust:100%;
+}
+body{
+  font-family:var(--body);
+  background:var(--cream);
+  color:var(--black);
+  font-size:16px;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+::selection{background:var(--gold);color:var(--white)}
+
+/* ============ PLACEHOLDER BLOCKS ============ */
+.ph{
+  background:var(--grey);
+  display:flex;align-items:center;justify-content:center;text-align:center;
+  color:var(--black);
+  font-family:var(--mono);font-size:0.78rem;letter-spacing:.06em;text-transform:uppercase;
+  line-height:1.8;padding:1.5rem;border:1px dashed var(--black);min-height:240px;
+}
+.dark .ph{
+  background:#2a2826;
+  color:var(--white);
+  border-color:var(--white);
+}
+.ph span{max-width:240px}
+
+/* ============ NAV ============ */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:200;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:1.4rem 3rem;
+  background:rgba(245,240,232,0.95);
+  backdrop-filter:blur(8px);
+  border-bottom:1px solid var(--grey);
+}
+.nav-mark{display:flex;align-items:center;gap:.8rem;text-decoration:none}
+.nav-mark img{height:24px;width:auto}
+.nav-mark .bar{width:1px;height:18px;background:var(--grey)}
+.nav-mark .word{font-family:var(--serif);font-weight:400;font-size:1rem;color:var(--black)}
+.nav-links{display:flex;gap:2.6rem;list-style:none;align-items:center}
+.nav-links a{
+  font-family:var(--mono);font-size:0.68rem;letter-spacing:.08em;
+  color:#666058;transition:color .2s;
+}
+.nav-links a:hover{color:var(--black)}
+.nav-cta{border-bottom:1px solid var(--grey) !important;padding-bottom:2px}
+.nav-cta:hover{border-color:var(--gold) !important;color:var(--gold) !important}
+.hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:6px}
+.hamburger span{display:block;width:20px;height:1px;background:var(--black)}
+@media(max-width:880px){.nav-links{display:none}.hamburger{display:flex}nav{padding:1.1rem 1.5rem}}
+
+.mob-nav{
+  display:none;position:fixed;inset:0;z-index:300;
+  background:var(--cream);flex-direction:column;align-items:center;justify-content:center;gap:2rem;
+}
+.mob-nav.open{display:flex}
+.mob-nav a{font-family:var(--serif);font-size:1.7rem;color:var(--black)}
+.mob-close{position:absolute;top:1.5rem;right:1.6rem;background:none;border:none;font-size:1.4rem;cursor:pointer;color:var(--black)}
+
+/* ============ SECTION STRUCTURE ============ */
+section{padding:5.5rem 3rem}
+.section-inner{max-width:1280px;margin:0 auto}
+@media(max-width:600px){section{padding:4rem 1.5rem}}
+
+.row-label{
+  display:flex;justify-content:space-between;align-items:baseline;
+  padding-bottom:.9rem;margin-bottom:2.6rem;
+  border-bottom:1px solid var(--grey);
+}
+.dark .row-label{border-color:#3a3830}
+.row-label .tag{
+  font-family:var(--mono);font-size:0.64rem;letter-spacing:.1em;text-transform:uppercase;
+  color:#888070;
+}
+.dark .row-label .tag{color:#b0a898}
+.row-label .tag.gold{color:var(--gold)}
+.row-label .ct{font-family:var(--mono);font-size:0.64rem;color:#888070}
+.dark .row-label .ct{color:#b0a898}
+
+.s-h2{
+  font-family:var(--serif);font-weight:400;
+  font-size:clamp(1.7rem,3.2vw,2.5rem);
+  line-height:1.2;margin-bottom:1.1rem;max-width:640px;
+  color:var(--black);
+}
+.dark .s-h2{color:var(--white)}
+.s-h2 i{font-style:italic}
+
+.s-intro{font-size:0.98rem;line-height:1.85;max-width:520px;color:#555048}
+.dark .s-intro{color:#b0a898}
+
+/* ============ HERO ============ */
+.hero{padding:61.8px 0 0;background:var(--cream)}
+.hero-frame{
+  width:100%;
+  aspect-ratio:4/5;
+  overflow:hidden;
+  position:relative;
+}
+@media(min-width:700px){.hero-frame{aspect-ratio:16/9}}
+.hero-frame img{
+  width:100%;height:100%;object-fit:cover;
+  object-position:center 20%;
+  display:block;
+}
+.hero-frame::after{
+  content:'';
+  position:absolute;
+  left:0;right:0;bottom:0;
+  height:18%;
+  background:linear-gradient(to bottom, transparent, var(--cream));
+  pointer-events:none;
+}
+.hero-cap{
+  max-width:1280px;margin:0 auto;padding:1.4rem 3rem 0;
+  display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:.5rem;
+}
+.hero-cap-text{
+  font-family:var(--serif);font-style:italic;font-weight:400;font-size:1.15rem;
+  color:var(--black);max-width:480px;line-height:1.5;
+}
+.hero-cap-meta{
+  font-family:var(--mono);font-size:0.64rem;letter-spacing:.1em;text-transform:uppercase;
+  color:#888070;text-align:right;
+}
+@media(max-width:700px){.hero-cap{flex-direction:column}.hero-cap-meta{text-align:left}}
+
+/* ============ BRAND — LIGHT ============ */
+#brand{background:var(--cream);color:var(--black)}
+.brand-grid{display:grid;grid-template-columns:1fr 1fr;gap:4.5rem;align-items:start}
+@media(max-width:880px){.brand-grid{grid-template-columns:1fr;gap:2.5rem}}
+.brand-body p{font-size:0.98rem;line-height:1.9;color:var(--black);margin-bottom:1.3rem;max-width:480px}
+.brand-photo .ph{aspect-ratio:4/5;min-height:auto}
+
+.scorecard{margin-top:2.8rem;border-top:1px solid var(--grey)}
+.sc-row{
+  display:flex;justify-content:space-between;
+  padding:.85rem 0;border-bottom:1px solid var(--grey);
+  font-family:var(--mono);font-size:0.78rem;
+}
+.sc-row span:first-child{color:#888070}
+.sc-row span:last-child{color:var(--black)}
+
+/* ============ THE EDIT — DARK ============ */
+#edit{background:var(--black);color:var(--white)}
+.edit-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0}
+.edit-card{position:relative;border-right:1px solid #3a3830;border-bottom:1px solid #3a3830}
+.edit-card:nth-child(4){border-right:none}
+.edit-card .frame{aspect-ratio:3/4;overflow:hidden}
+.edit-card img,.edit-card video{width:100%;height:100%;object-fit:cover;display:block}
+.edit-card .cap b{font-family:var(--serif);font-weight:400;font-size:0.92rem;display:block;margin-bottom:.2rem;color:var(--white)}
+.edit-card .cap span{font-family:var(--mono);font-size:0.6rem;letter-spacing:.06em;text-transform:uppercase;color:#b0a898}
+.edit-pad{padding:1rem 1.4rem 1.4rem}
+.edit-card:first-child .edit-pad,.edit-card:nth-child(4n+1) .edit-pad{padding-left:0}
+@media(max-width:880px){.edit-grid{grid-template-columns:repeat(2,1fr)}.edit-card:nth-child(2n){border-right:none}}
+@media(max-width:560px){.edit-grid{grid-template-columns:1fr}.edit-card{border-right:none!important}}
+
+/* ============ COMMISSION — LIGHT ============ */
+#commission{background:var(--cream);color:var(--black)}
+.comm-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:4.5rem;align-items:start}
+@media(max-width:880px){.comm-grid{grid-template-columns:1fr;gap:2rem}}
+.comm-photo .ph{aspect-ratio:4/5;min-height:auto}
+.comm-rows{border-top:1px solid var(--grey);margin-top:1.8rem}
+.comm-row{padding:1.3rem 0;border-bottom:1px solid var(--grey);display:flex;gap:1.5rem}
+.comm-row .n{font-family:var(--serif);font-style:italic;color:var(--gold);font-size:1rem;flex-shrink:0;width:1.6rem}
+.comm-row p{font-size:0.92rem;line-height:1.7;color:var(--black)}
+.text-link{
+  font-family:var(--mono);font-size:0.68rem;letter-spacing:.08em;text-transform:uppercase;
+  color:var(--black);border-bottom:1px solid var(--grey);padding-bottom:3px;
+  display:inline-block;margin-top:1.8rem;transition:border-color .2s,color .2s;
+}
+.text-link:hover{border-color:var(--gold);color:var(--gold)}
+
+/* ============ DROPS — DARK ============ */
+#drops{background:var(--black);color:var(--white)}
+.drops-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:3rem}
+@media(max-width:880px){.drops-grid{grid-template-columns:1fr 1fr;gap:2rem}}
+@media(max-width:600px){.drops-grid{grid-template-columns:1fr}}
+.drop-status{
+  font-family:var(--mono);font-size:0.6rem;letter-spacing:.08em;
+  text-transform:uppercase;color:var(--gold);display:block;margin-bottom:.5rem;
+}
+.drop-name{font-family:var(--serif);font-weight:400;font-size:1.15rem;margin-bottom:.4rem;color:var(--white)}
+.drop-desc{font-size:0.88rem;line-height:1.7;color:#b0a898}
+
+/* ============ MEMBERS — LIGHT ============ */
+#members{background:var(--cream);color:var(--black)}
+.members-grid{
+  display:grid;grid-template-columns:1fr 1fr;gap:0;
+  border-top:1px solid var(--grey);border-left:1px solid var(--grey);
+}
+.tier{padding:2.4rem;border-right:1px solid var(--grey);border-bottom:1px solid var(--grey)}
+@media(max-width:760px){.members-grid{grid-template-columns:1fr}.tier{border-right:none}}
+.tier-name{font-family:var(--serif);font-weight:400;font-size:1.3rem;margin-bottom:.3rem;color:var(--black)}
+.tier-price{font-family:var(--mono);font-size:0.7rem;letter-spacing:.06em;text-transform:uppercase;color:#888070;margin-bottom:1.5rem}
+.tier.featured .tier-price{color:var(--gold)}
+.tier ul{list-style:none}
+.tier li{font-size:0.88rem;line-height:1.7;color:#555048;padding:.6rem 0;border-top:1px solid var(--grey)}
+.tier li:first-child{border-top:none}
+
+/* ============ CONTACT — DARK ============ */
+#contact{background:var(--black);color:var(--white)}
+.contact-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:4.5rem;align-items:start}
+@media(max-width:880px){.contact-grid{grid-template-columns:1fr;gap:2.5rem}}
+.contact-info p{font-size:0.95rem;line-height:1.85;color:#b0a898;margin-bottom:1.6rem;max-width:420px}
+.contact-channel{padding:1rem 0;border-top:1px solid #3a3830;display:flex;align-items:baseline;gap:1rem}
+.contact-channel:first-of-type{border-top:1px solid #555048;margin-top:.6rem}
+.contact-channel .lbl{font-family:var(--mono);font-size:0.6rem;letter-spacing:.08em;text-transform:uppercase;color:#888070;width:5.5rem;flex-shrink:0}
+.contact-channel a{font-family:var(--body);font-size:0.92rem;color:var(--white);transition:color .2s}
+.contact-channel a:hover{color:var(--gold)}
+
+.form{display:flex;flex-direction:column;gap:1.3rem}
+.form label{font-family:var(--mono);font-size:0.6rem;letter-spacing:.07em;text-transform:uppercase;color:#888070;margin-bottom:.5rem;display:block}
+.form input,.form select,.form textarea{
+  width:100%;background:#2a2826;border:none;border-bottom:1px solid #555048;
+  padding:.7rem .6rem;font-family:var(--body);font-size:0.95rem;
+  color:var(--white);border-radius:0;
+}
+.form input:focus,.form select:focus,.form textarea:focus{outline:none;border-color:var(--gold)}
+.form textarea{resize:vertical;min-height:90px}
+.form-submit{
+  margin-top:.8rem;background:var(--white);color:var(--black);border:1px solid var(--white);
+  padding:.95rem 2rem;font-family:var(--mono);font-size:0.68rem;letter-spacing:.1em;text-transform:uppercase;
+  cursor:pointer;transition:background .2s,border-color .2s,color .2s;align-self:flex-start;
+}
+.form-submit:hover{background:var(--gold);border-color:var(--gold);color:var(--white)}
+.form-submit:disabled{opacity:.55;cursor:default}
+.f-success{display:none;padding:1.8rem 0;border-top:1px solid var(--gold);color:var(--white)}
+.f-success b{font-family:var(--serif);font-size:1.1rem;display:block;margin-bottom:.4rem;color:var(--white)}
+
+/* ============ FOOTER — LIGHT ============ */
+footer{
+  background:var(--cream);color:var(--black);
+  padding:3.5rem 3rem 2rem;border-top:1px solid var(--grey);
+  display:flex;flex-wrap:wrap;gap:2.5rem;justify-content:space-between;
+}
+@media(max-width:760px){footer{flex-direction:column}}
+.f-col h4{font-family:var(--mono);font-size:0.6rem;letter-spacing:.08em;text-transform:uppercase;color:#888070;margin-bottom:1rem}
+.f-col ul{list-style:none}
+.f-col li{margin-bottom:.6rem}
+.f-col a{font-size:0.86rem;color:#555048;transition:color .2s}
+.f-col a:hover{color:var(--black)}
+.f-mark{display:flex;align-items:center;gap:.8rem;margin-bottom:.9rem}
+.f-mark img{height:24px}
+.f-mark .bar{width:1px;height:18px;background:var(--grey)}
+.f-mark .word{font-family:var(--serif);font-size:1rem;color:var(--black)}
+.f-tagline{font-size:0.84rem;color:#888070;max-width:260px;line-height:1.7}
+.f-bottom{
+  width:100%;margin-top:2.6rem;padding-top:1.5rem;border-top:1px solid var(--grey);
+  display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;
+}
+@media(max-width:760px){.f-bottom{flex-direction:column;align-items:flex-start}}
+.f-copy{font-family:var(--mono);font-size:0.62rem;color:#888070}
+.f-built{display:flex;align-items:center;gap:.5rem;font-family:var(--mono);font-size:0.62rem;letter-spacing:.04em;text-transform:uppercase;color:#888070;transition:color .2s}
+.f-built img{width:16px;height:16px;border-radius:50%}
+.f-built:hover{color:var(--gold)}
+
+/* ============ GOLD TRIM ACCENTS ============ */
+.gold-accent{color:var(--gold)}
+
+/* ============ CUSTOM CURSOR ============ */
+@media(pointer:fine){
+  *{cursor:none !important}
+  .cursor{
+    position:fixed;top:0;left:0;z-index:9999;pointer-events:none;
+    width:10px;height:10px;border-radius:50%;
+    background:var(--gold);
+    transform:translate(-50%,-50%);
+    transition:width .2s ease,height .2s ease,background .2s ease;
+  }
+  .cursor-ring{
+    position:fixed;top:0;left:0;z-index:9998;pointer-events:none;
+    width:36px;height:36px;border-radius:50%;
+    border:1px solid var(--gold);
+    transform:translate(-50%,-50%);
+    transition:transform .12s ease,width .2s ease,height .2s ease,opacity .2s ease;
+    opacity:.6;
+  }
+  .cursor.hover{width:6px;height:6px;background:var(--gold)}
+  .cursor-ring.hover{width:52px;height:52px;opacity:.4}
+}
+  outline:2px solid var(--gold);outline-offset:2px;
+}
+@media(prefers-reduced-motion:reduce){*{animation-duration:.01ms!important}}
+</style>
+</head>
+<body>
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<nav>
+  <a href="#" class="nav-mark">
+    <img src="vx-mark-black.png" alt="Vx">
+    <span class="bar"></span>
+    <span class="word">Vintxge Golf</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#brand">Brand</a></li>
+    <li><a href="#edit">The Edit</a></li>
+    <li><a href="#commission">Commission</a></li>
+    <li><a href="#drops">Drops</a></li>
+    <li><a href="#members">Members</a></li>
+    <li><a href="#contact" class="nav-cta">Enquire</a></li>
+  </ul>
+  <button class="hamburger" id="hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
+</nav>
+
+<div class="mob-nav" id="mobNav">
+  <button class="mob-close" id="mobClose" aria-label="Close menu">✕</button>
+  <a href="#brand" class="mob-item">Brand</a>
+  <a href="#edit" class="mob-item">The Edit</a>
+  <a href="#commission" class="mob-item">Commission</a>
+  <a href="#drops" class="mob-item">Drops</a>
+  <a href="#members" class="mob-item">Members</a>
+  <a href="#contact" class="mob-item">Enquire</a>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-frame">
+    <img src="hero-opt.jpeg" alt="Vintxge Golf — golf apparel worn differently" fetchpriority="high">
+  </div>
+  <div class="hero-cap">
+    <p class="hero-cap-text">Golf apparel, made to enquiry.</p>
+    <p class="hero-cap-meta">Aberdeen, Scotland<br>Est. 2022</p>
+  </div>
+</section>
+
+<!-- THE BRAND — LIGHT -->
+<section id="brand">
+  <div class="section-inner">
+    <div class="row-label">
+      <span class="tag">The Brand</span>
+      <span class="ct">01</span>
+    </div>
+    <h2 class="s-h2">Golf's traditions, <i>worn differently.</i></h2>
+    <div class="brand-grid" style="margin-top:2.4rem">
+      <div class="brand-body">
+        <p>Vintxge Golf began in 2022 with a simple premise — that the game's traditions and a more modern, streetwise sense of style were not in conflict.</p>
+        <p>We value the prestige of golf as it's always been. We also pay attention to how it's actually worn today, on and off the course. Vintxge sits in that space — hence the X. Our own twist on the word, and on the game.</p>
+        <p>Founded by Matthew Lynas and Craig Leith. Self-funded from the first stitch, with no agency and no outside investment behind any of it.</p>
+        <div class="scorecard">
+          <div class="sc-row"><span>Founded</span><span>2022</span></div>
+          <div class="sc-row"><span>Shipped to</span><span>10+ countries</span></div>
+          <div class="sc-row"><span>External investment</span><span>None</span></div>
+          <div class="sc-row"><span>Based</span><span>Aberdeen, Scotland</span></div>
+        </div>
+      </div>
+      <div class="brand-photo">
+        <img src="qz-IMG_3832-opt.jpeg" alt="Vintxge Golf QZ sample on course" style="width:100%;aspect-ratio:4/5;object-fit:cover;object-position:center top;display:block">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- THE EDIT — DARK -->
+<section id="edit" class="dark">
+  <div class="section-inner">
+    <div class="row-label">
+      <span class="tag gold">The Edit</span>
+      <span class="ct">02</span>
+    </div>
+    <h2 class="s-h2">A record, <i>not a pitch.</i></h2>
+    <p class="s-intro" style="margin-bottom:2.6rem">Four things that happened. No staging.</p>
+    <div class="edit-grid">
+      <div class="edit-card">
+        <div class="frame"><img src="deeside-proshop.jpeg" alt="VX pro shop at Deeside Golf Club" loading="lazy"></div>
+        <div class="edit-pad cap"><b>Pro Shop</b><span>Deeside Golf Club</span></div>
+      </div>
+      <div class="edit-card">
+        <div class="frame"><img src="gary-ward-tour.png" alt="Gary Ward on the Farmfoods Tartan Pro Tour" loading="lazy"></div>
+        <div class="edit-pad cap"><b>Tour Sponsorship</b><span>Gary Ward, Tartan Pro Tour</span></div>
+      </div>
+      <div class="edit-card">
+        <div class="frame"><video src="vanity-friday.mp4" poster="vanity-poster.jpg" autoplay muted loop playsinline></video></div>
+        <div class="edit-pad cap"><b>Vanity Friday</b><span>Babylon Club</span></div>
+      </div>
+      <div class="edit-card">
+        <div class="frame"><video src="popup-market.mp4" poster="popup-poster.jpg" autoplay muted loop playsinline></video></div>
+        <div class="edit-pad cap"><b>Pop-Up</b><span>UK market activations</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMMISSION — LIGHT -->
+<section id="commission">
+  <div class="section-inner">
+    <div class="row-label">
+      <span class="tag">Commission</span>
+      <span class="ct">03</span>
+    </div>
+    <h2 class="s-h2">Made to the <i>brief, not the rail.</i></h2>
+    <div class="comm-grid" style="margin-top:2.4rem">
+      <div class="comm-photo">
+        <img src="qz-IMG_3809-opt.jpeg" alt="VX QZ detail — craft and finish" style="width:100%;aspect-ratio:4/5;object-fit:cover;object-position:center;display:block">
+      </div>
+      <div>
+        <p class="s-intro">No catalogue. No published price. No standard lead time. Every piece is specified and costed against the brief in front of us — for individuals, clubs, Pennant teams and corporate days alike.</p>
+        <div class="comm-rows">
+          <div class="comm-row"><span class="n">i.</span><p>Custom colourways and embroidery, worked through with you directly</p></div>
+          <div class="comm-row"><span class="n">ii.</span><p>Club, Pennant team and corporate golf day kit, quoted per order</p></div>
+          <div class="comm-row"><span class="n">iii.</span><p>Personal pieces for the golfer who isn't buying off a shelf</p></div>
+          <div class="comm-row"><span class="n">iv.</span><p>Price and timeline confirmed once we understand what's needed — never before</p></div>
+        </div>
+        <a href="#contact" class="text-link">Start a commission</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DROPS — DARK -->
+<section id="drops" class="dark">
+  <div class="section-inner">
+    <div class="row-label">
+      <span class="tag gold">Limited</span>
+      <span class="ct">04</span>
+    </div>
+    <h2 class="s-h2">Drops, by <i>enquiry.</i></h2>
+    <p class="s-intro" style="margin-bottom:2.8rem">Small-run pieces outside the commission line. Fixed counts, no public price. Members hear first.</p>
+    <div class="drops-grid">
+      <div class="drop-card">
+        <img src="sticks-flatlay-opt.jpeg" alt="VX Alignment Sticks" style="width:100%;aspect-ratio:4/5;object-fit:cover;object-position:center;display:block;margin-bottom:1.2rem">
+        <span class="drop-status" style="margin-top:1.2rem">Arriving — enquire to reserve</span>
+        <div class="drop-name">Alignment Sticks</div>
+        <p class="drop-desc">The first piece of this new chapter. Limited run.</p>
+      </div>
+      <div class="drop-card">
+        <img src="qz-IMG_3821-opt.jpeg" alt="VX QZ Sample — stripe colourway" style="width:100%;aspect-ratio:4/5;object-fit:cover;object-position:center top;display:block;margin-bottom:1.2rem">
+        <span class="drop-status" style="margin-top:1.2rem">Sampling — enquire for access</span>
+        <div class="drop-name">Sample Jumper</div>
+        <p class="drop-desc">An early run, limited sizing. First word to members.</p>
+      </div>
+      <div class="drop-card">
+        <img src="qz-IMG_3836-opt.jpeg" alt="VX QZ Sample — pink stripe colourway" style="width:100%;aspect-ratio:4/5;object-fit:cover;object-position:center top;display:block;margin-bottom:1.2rem">
+        <span class="drop-status" style="margin-top:1.2rem">Final run — members first</span>
+        <div class="drop-name">Archive Hoodie</div>
+        <p class="drop-desc">What's left of the original run. Once it's gone, it's retired.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MEMBERS — LIGHT -->
+<section id="members">
+  <div class="section-inner">
+    <div class="row-label">
+      <span class="tag">VX Members Club</span>
+      <span class="ct">05</span>
+    </div>
+    <h2 class="s-h2">First word, <i>always.</i></h2>
+    <p class="s-intro" style="margin-bottom:2.4rem">Membership means hearing about a drop or commission slot before anyone else does.</p>
+    <div class="members-grid">
+      <div class="tier">
+        <div class="tier-name">Community</div>
+        <div class="tier-price">No cost</div>
+        <ul>
+          <li>Early notice on every drop</li>
+          <li>Access to members content</li>
+          <li>A direct line for general enquiries</li>
+        </ul>
+      </div>
+      <div class="tier featured">
+        <div class="tier-name">Inner Circle</div>
+        <div class="tier-price">Apply for access</div>
+        <ul>
+          <li>48-hour early access to every drop</li>
+          <li>Priority on commission slots</li>
+          <li>One personalisation credit a year</li>
+          <li>Invited to VX events</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT — DARK -->
+<section id="contact" class="dark">
+  <div class="section-inner">
+    <div class="row-label">
+      <span class="tag gold">Enquire</span>
+      <span class="ct">06</span>
+    </div>
+    <h2 class="s-h2">Tell us what <i>you're picturing.</i></h2>
+    <div class="contact-grid" style="margin-top:2.4rem">
+      <div class="contact-info">
+        <p>Every commission, drop reservation and membership enquiry starts here. We reply within 48 hours. Payment and final detail are agreed directly once we've talked it through.</p>
+        <div class="contact-channel">
+          <span class="lbl">Instagram</span>
+          <a href="https://www.instagram.com/vintxgegolf/" target="_blank" rel="noopener noreferrer">@vintxgegolf</a>
+        </div>
+        <div class="contact-channel">
+          <span class="lbl">Email</span>
+          <a href="mailto:vintxgegolf@outlook.com">vintxgegolf@outlook.com</a>
+        </div>
+      </div>
+      <form class="form" id="cForm" action="https://formspree.io/f/mvzezqzn" method="POST">
+        <div>
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" required>
+        </div>
+        <div>
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+        <div>
+          <label for="type">Enquiry type</label>
+          <select id="type" name="type">
+            <option>Bespoke commission</option>
+            <option>Limited drop reservation</option>
+            <option>Members Club</option>
+            <option>Club / Pennant team / corporate order</option>
+            <option>Something else</option>
+          </select>
+        </div>
+        <div>
+          <label for="message">What are you picturing</label>
+          <textarea id="message" name="message" required></textarea>
+        </div>
+        <button type="submit" class="form-submit">Send enquiry</button>
+        <div class="f-success" id="fSuccess">
+          <b>Enquiry sent</b>
+          We'll be in touch within 48 hours. For anything urgent, DM @vintxgegolf on Instagram.
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER — LIGHT -->
+<footer>
+  <div style="flex:1;min-width:200px">
+    <div class="f-mark">
+      <img src="vx-mark-black.png" alt="Vx">
+      <span class="bar"></span>
+      <span class="word">Vintxge Golf</span>
+    </div>
+    <p class="f-tagline">Golf apparel, made to enquiry. Bespoke commissions and limited drops only.</p>
+  </div>
+  <div class="f-col">
+    <h4>Site</h4>
+    <ul>
+      <li><a href="#brand">The Brand</a></li>
+      <li><a href="#edit">The Edit</a></li>
+      <li><a href="#commission">Commission</a></li>
+      <li><a href="#drops">Drops</a></li>
+      <li><a href="#members">Members</a></li>
+    </ul>
+  </div>
+  <div class="f-col">
+    <h4>Connect</h4>
+    <ul>
+      <li><a href="https://www.instagram.com/vintxgegolf/" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+      <li><a href="https://www.tiktok.com/@vintxgegolf" target="_blank" rel="noopener noreferrer">TikTok</a></li>
+      <li><a href="https://www.facebook.com/profile.php?id=61550872304245" target="_blank" rel="noopener noreferrer">Facebook</a></li>
+      <li><a href="mailto:hello@vintxgegolf.com">Email</a></li>
+    </ul>
+  </div>
+  <div class="f-bottom">
+    <span class="f-copy">© 2026 Vintxge Golf, United Kingdom</span>
+    <a href="https://dotxrepresentative.com" target="_blank" rel="noopener noreferrer" class="f-built">
+      <img src="dotx-logo.png" alt="dot.x">
+      Built by dot.x
+    </a>
+  </div>
+</footer>
+
+<script>
+// CUSTOM CURSOR
+(function(){
+  const cursor=document.getElementById('cursor'),ring=document.getElementById('cursorRing');
+  if(!cursor||!ring)return;
+  let mx=0,my=0,rx=0,ry=0;
+  document.addEventListener('mousemove',e=>{
+    mx=e.clientX;my=e.clientY;
+    cursor.style.left=mx+'px';cursor.style.top=my+'px';
+  });
+  (function animateRing(){
+    rx+=(mx-rx)*0.12;ry+=(my-ry)*0.12;
+    ring.style.left=rx+'px';ring.style.top=ry+'px';
+    requestAnimationFrame(animateRing);
+  })();
+  document.querySelectorAll('a,button,input,select,textarea,.drop-card,.edit-card').forEach(el=>{
+    el.addEventListener('mouseenter',()=>{cursor.classList.add('hover');ring.classList.add('hover')});
+    el.addEventListener('mouseleave',()=>{cursor.classList.remove('hover');ring.classList.remove('hover')});
+  });
+})();
+(function(){
+  const btn=document.getElementById('hamburger'),nav=document.getElementById('mobNav'),cl=document.getElementById('mobClose');
+  if(!btn)return;
+  btn.addEventListener('click',()=>{nav.classList.add('open');document.body.style.overflow='hidden'});
+  cl.addEventListener('click',()=>{nav.classList.remove('open');document.body.style.overflow=''});
+  nav.querySelectorAll('.mob-item').forEach(el=>el.addEventListener('click',()=>{nav.classList.remove('open');document.body.style.overflow=''}));
+})();
+(function(){
+  const form=document.getElementById('cForm'),succ=document.getElementById('fSuccess');
+  if(!form)return;
+  form.addEventListener('submit',async e=>{
+    e.preventDefault();
+    const btn=form.querySelector('button[type="submit"]');
+    btn.disabled=true;btn.textContent='Sending…';
+    try{
+      const res=await fetch(form.action,{method:'POST',body:new FormData(form),headers:{'Accept':'application/json'}});
+      if(res.ok){form.querySelectorAll('div,button').forEach(el=>el.style.display='none');succ.style.display='block'}
+      else{btn.disabled=false;btn.textContent='Send enquiry';alert('Something went wrong — please DM @vintxgegolf on Instagram instead.')}
+    }catch{btn.disabled=false;btn.textContent='Send enquiry';alert('Something went wrong — please DM @vintxgegolf on Instagram instead.')}
+  });
+})();
+</script>
+</body>
+</html>
