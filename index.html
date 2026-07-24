@@ -170,15 +170,20 @@ section{padding:5.5rem 3rem}
 .scorecard-strip{
   background:var(--cream);
   border-bottom:1px solid var(--grey);
-  padding:.9rem 3rem;
-  display:flex;align-items:center;justify-content:center;gap:1.2rem;
+  padding:.75rem 0;
+  overflow:hidden;
+  white-space:nowrap;
+}
+.scorecard-inner{
+  display:inline-block;
+  animation:scroll-left 18s linear infinite;
   font-family:var(--mono);font-size:0.68rem;letter-spacing:.1em;text-transform:uppercase;
   color:#888070;
 }
-.sc-dot{color:var(--gold)}
-@media(max-width:600px){
-  .scorecard-strip{flex-direction:column;gap:.4rem;padding:.8rem 1.5rem;text-align:center}
-  .sc-dot{display:none}
+.sc-dot{color:var(--gold);padding:0 1.2rem}
+@keyframes scroll-left{
+  from{transform:translateX(0)}
+  to{transform:translateX(-50%)}
 }
 .hero{padding:61.8px 0 0;background:var(--cream)}
 .hero-frame{
@@ -413,19 +418,13 @@ footer .f-cols{display:flex;gap:4rem;margin-bottom:3rem}
   <div class="hero-frame">
     <img src="hero-opt.jpeg" alt="Vintxge Golf" fetchpriority="high">
   </div>
-  <div class="hero-cap">
-    <p class="hero-cap-text">Golf apparel, made to enquiry.</p>
-    <p class="hero-cap-meta">United Kingdom</p>
-  </div>
 </section>
 
 <!-- SCORECARD STRIP -->
 <div class="scorecard-strip">
-  <span>Founded 2026</span>
-  <span class="sc-dot">·</span>
-  <span>Shipped to 10+ Countries</span>
-  <span class="sc-dot">·</span>
-  <span>United Kingdom</span>
+  <div class="scorecard-inner">
+    <span>Founded 2022</span><span class="sc-dot">·</span><span>United Kingdom</span><span class="sc-dot">·</span><span>Shipped Internationally</span><span class="sc-dot">·</span><span>Founded 2022</span><span class="sc-dot">·</span><span>United Kingdom</span><span class="sc-dot">·</span><span>Shipped Internationally</span><span class="sc-dot">·</span>
+  </div>
 </div>
 
 <!-- COMMISSION — LIGHT -->
@@ -646,7 +645,7 @@ footer .f-cols{display:flex;gap:4rem;margin-bottom:3rem}
     </div>
   </div>
   <div class="f-bottom">
-    <span class="f-copy">© 2026 Vintxge Golf · United Kingdom</span>
+    <span class="f-copy">© 2022 Vintxge Golf · United Kingdom</span>
     <a href="https://dotxrepresentative.com" target="_blank" rel="noopener noreferrer" class="f-built">
       <img src="dotx-logo.png" alt="dot.x">
       Built by dot.x
