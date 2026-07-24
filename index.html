@@ -303,7 +303,7 @@ section{padding:5.5rem 3rem}
 .drop-desc{font-size:0.88rem;line-height:1.7;color:#b0a898}
 
 /* ============ MEMBERS — LIGHT ============ */
-#members{background:var(--cream);color:var(--black)}
+#members.dark{background:#1a1a1a !important;color:#ffffff !important}
 .members-grid{
   display:grid;grid-template-columns:1fr 1fr;gap:0;
   border-top:1px solid var(--grey);border-left:1px solid var(--grey);
@@ -318,7 +318,7 @@ section{padding:5.5rem 3rem}
 .tier li:first-child{border-top:none}
 
 /* ============ CONTACT — DARK ============ */
-#contact{background:var(--black);color:var(--white)}
+#contact{background:var(--cream);color:var(--black)}
 .contact-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:4.5rem;align-items:start}
 @media(max-width:880px){.contact-grid{grid-template-columns:1fr;gap:2.5rem}}
 .contact-info p{font-size:0.95rem;line-height:1.85;color:#b0a898;margin-bottom:1.6rem;max-width:420px}
@@ -347,11 +347,11 @@ section{padding:5.5rem 3rem}
 .f-success{display:none;padding:1.8rem 0;border-top:1px solid var(--gold);color:var(--white)}
 .f-success b{font-family:var(--serif);font-size:1.1rem;display:block;margin-bottom:.4rem;color:var(--white)}
 
-/* ============ FOOTER — LIGHT ============ */
+/* ============ FOOTER — DARK ============ */
 footer{
-  background:var(--cream);color:var(--black);
+  background:var(--black);color:var(--white);
   padding:4rem 3rem 2rem;
-  border-top:1px solid var(--grey);
+  border-top:1px solid #3a3830;
 }
 .f-inner{max-width:1280px;margin:0 auto}
 footer .f-brand{margin-bottom:3rem}
@@ -360,15 +360,15 @@ footer .f-cols{display:flex;gap:4rem;margin-bottom:3rem}
 .f-col h4{font-family:var(--mono);font-size:0.6rem;letter-spacing:.1em;text-transform:uppercase;color:#888070;margin-bottom:1rem}
 .f-col ul{list-style:none}
 .f-col li{margin-bottom:.55rem}
-.f-col a{font-size:0.88rem;color:#555048;transition:color .2s}
-.f-col a:hover{color:var(--black)}
+.f-col a{font-size:0.88rem;color:#b0a898;transition:color .2s}
+.f-col a:hover{color:var(--white)}
 .f-mark{display:flex;align-items:center;gap:.8rem;margin-bottom:.8rem}
 .f-mark img{height:22px}
-.f-mark .bar{width:1px;height:16px;background:var(--grey)}
-.f-mark .word{font-family:var(--serif);font-size:0.95rem;color:var(--black)}
+.f-mark .bar{width:1px;height:16px;background:#3a3830}
+.f-mark .word{font-family:var(--serif);font-size:0.95rem;color:var(--white)}
 .f-tagline{font-size:0.84rem;color:#888070;line-height:1.7}
 .f-bottom{
-  padding-top:1.5rem;border-top:1px solid var(--grey);
+  padding-top:1.5rem;border-top:1px solid #3a3830;
   display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;
 }
 @media(max-width:600px){footer{padding:3rem 1.5rem 1.5rem}.f-bottom{flex-direction:column;align-items:flex-start}}
@@ -641,11 +641,11 @@ footer .f-cols{display:flex;gap:4rem;margin-bottom:3rem}
   </div>
 </section>
 
-<!-- FOOTER — LIGHT -->
+<!-- FOOTER — DARK -->
 <footer>
   <div class="f-brand">
     <div class="f-mark">
-      <img src="vx-mark-black.png" alt="Vx">
+      <img src="vx-mark-white.png" alt="Vx">
       <span class="bar"></span>
       <span class="word">Vintxge Golf</span>
     </div>
@@ -676,7 +676,7 @@ footer .f-cols{display:flex;gap:4rem;margin-bottom:3rem}
   <div class="f-bottom">
     <span class="f-copy">© 2022 Vintxge Golf · United Kingdom</span>
     <a href="https://dotxrepresentative.com" target="_blank" rel="noopener noreferrer" class="f-built">
-      <img src="dotx-logo.png" alt="dot.x">
+      <img src="dotx-logo-white.png" alt="dot.x">
       Built by dot.x
     </a>
   </div>
