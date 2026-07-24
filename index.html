@@ -200,7 +200,7 @@ section{padding:5.5rem 3rem}
   font-family:var(--mono);font-size:0.68rem;letter-spacing:.1em;text-transform:uppercase;
   color:#888070;
 }
-.sc-dot{color:var(--gold);padding:0 1.2rem}
+.sc-dot{color:var(--black);padding:0 1.2rem;opacity:.3}
 @keyframes scroll-left{
   from{transform:translateX(0)}
   to{transform:translateX(-50%)}
@@ -317,15 +317,15 @@ section{padding:5.5rem 3rem}
 .tier li{font-size:0.88rem;line-height:1.7;color:#555048;padding:.6rem 0;border-top:1px solid var(--grey)}
 .tier li:first-child{border-top:none}
 
-/* ============ CONTACT — DARK ============ */
+/* ============ CONTACT — LIGHT ============ */
 #contact{background:var(--cream);color:var(--black)}
 .contact-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:4.5rem;align-items:start}
 @media(max-width:880px){.contact-grid{grid-template-columns:1fr;gap:2.5rem}}
-.contact-info p{font-size:0.95rem;line-height:1.85;color:#b0a898;margin-bottom:1.6rem;max-width:420px}
-.contact-channel{padding:1rem 0;border-top:1px solid #3a3830;display:flex;align-items:baseline;gap:1rem}
-.contact-channel:first-of-type{border-top:1px solid #555048;margin-top:.6rem}
+.contact-info p{font-size:0.95rem;line-height:1.85;color:#555048;margin-bottom:1.6rem;max-width:420px}
+.contact-channel{padding:1rem 0;border-top:1px solid var(--grey);display:flex;align-items:baseline;gap:1rem}
+.contact-channel:first-of-type{border-top:1px solid var(--grey);margin-top:.6rem}
 .contact-channel .lbl{font-family:var(--mono);font-size:0.6rem;letter-spacing:.08em;text-transform:uppercase;color:#888070;width:5.5rem;flex-shrink:0}
-.contact-channel a{font-family:var(--body);font-size:0.92rem;color:var(--white);transition:color .2s}
+.contact-channel a{font-family:var(--body);font-size:0.92rem;color:var(--black);transition:color .2s}
 .contact-channel a:hover{color:var(--gold)}
 
 .form{display:flex;flex-direction:column;gap:1.3rem}
@@ -344,8 +344,8 @@ section{padding:5.5rem 3rem}
 }
 .form-submit:hover{background:var(--gold);border-color:var(--gold);color:var(--white)}
 .form-submit:disabled{opacity:.55;cursor:default}
-.f-success{display:none;padding:1.8rem 0;border-top:1px solid var(--gold);color:var(--white)}
-.f-success b{font-family:var(--serif);font-size:1.1rem;display:block;margin-bottom:.4rem;color:var(--white)}
+.f-success{display:none;padding:1.8rem 0;border-top:1px solid var(--gold);color:var(--black)}
+.f-success b{font-family:var(--serif);font-size:1.1rem;display:block;margin-bottom:.4rem;color:var(--black)}
 
 /* ============ FOOTER — DARK ============ */
 footer{
