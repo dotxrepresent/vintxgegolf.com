@@ -307,14 +307,14 @@ section{padding:5.5rem 3rem}
 .form{display:flex;flex-direction:column;gap:1.3rem}
 .form label{font-family:var(--mono);font-size:0.6rem;letter-spacing:.07em;text-transform:uppercase;color:#888070;margin-bottom:.5rem;display:block}
 .form input,.form select,.form textarea{
-  width:100%;background:#2a2826;border:none;border-bottom:1px solid #555048;
+  width:100%;background:transparent;border:none;border-bottom:1px solid var(--grey);
   padding:.7rem .6rem;font-family:var(--body);font-size:0.95rem;
-  color:var(--white);border-radius:0;
+  color:var(--black);border-radius:0;
 }
 .form input:focus,.form select:focus,.form textarea:focus{outline:none;border-color:var(--gold)}
 .form textarea{resize:vertical;min-height:90px}
 .form-submit{
-  margin-top:.8rem;background:var(--white);color:var(--black);border:1px solid var(--white);
+  margin-top:.8rem;background:var(--black);color:var(--white);border:1px solid var(--black);
   padding:.95rem 2rem;font-family:var(--mono);font-size:0.68rem;letter-spacing:.1em;text-transform:uppercase;
   cursor:pointer;transition:background .2s,border-color .2s,color .2s;align-self:flex-start;
 }
@@ -393,8 +393,8 @@ footer .f-cols{display:flex;gap:4rem;margin-bottom:3rem}
     <span class="word">Vintxge Golf</span>
   </a>
   <ul class="nav-links">
+    <li><a href="#drops">Limited</a></li>
     <li><a href="#commission">Commission</a></li>
-    <li><a href="#drops">Drops</a></li>
     <li><a href="#members">Members</a></li>
     <li><a href="#brand">The Brand</a></li>
     <li><a href="#edit">The Edit</a></li>
@@ -405,8 +405,8 @@ footer .f-cols{display:flex;gap:4rem;margin-bottom:3rem}
 
 <div class="mob-nav" id="mobNav">
   <button class="mob-close" id="mobClose" aria-label="Close menu">✕</button>
+  <a href="#drops" class="mob-item">Limited</a>
   <a href="#commission" class="mob-item">Commission</a>
-  <a href="#drops" class="mob-item">Drops</a>
   <a href="#members" class="mob-item">Members</a>
   <a href="#brand" class="mob-item">The Brand</a>
   <a href="#edit" class="mob-item">The Edit</a>
@@ -427,12 +427,42 @@ footer .f-cols{display:flex;gap:4rem;margin-bottom:3rem}
   </div>
 </div>
 
+<!-- DROPS — DARK -->
+<section id="drops" class="dark">
+  <div class="section-inner">
+    <div class="row-label">
+      <span class="tag gold">Limited</span>
+    </div>
+    <h2 class="s-h2">Limited runs, <i>by enquiry.</i></h2>
+    <p class="s-intro" style="margin-bottom:2.8rem">Fixed quantities. No public pricing. Members are notified first.</p>
+    <div class="drops-grid">
+      <div class="drop-card">
+        <img src="hoodie-isle-blue-opt.jpeg" alt="VX Performance Hoodie" style="width:100%;aspect-ratio:4/5;object-fit:cover;object-position:center top;display:block;margin-bottom:1.2rem">
+        <span class="drop-status">Final units — members first</span>
+        <div class="drop-name">Performance Hoodie</div>
+        <p class="drop-desc">Isle Blue. Remaining stock only.</p>
+      </div>
+      <div class="drop-card">
+        <img src="qz-IMG_3821-opt.jpeg" alt="VX Quarter-Zip" style="width:100%;aspect-ratio:4/5;object-fit:cover;object-position:center top;display:block;margin-bottom:1.2rem">
+        <span class="drop-status">Available by commission</span>
+        <div class="drop-name">Quarter-Zip</div>
+        <p class="drop-desc">Stripe performance QZ. Four colourways.</p>
+      </div>
+      <div class="drop-card">
+        <img src="sticks-flatlay-opt.jpeg" alt="VX Alignment Sticks" style="width:100%;aspect-ratio:4/5;object-fit:cover;object-position:center;display:block;margin-bottom:1.2rem">
+        <span class="drop-status">Available — enquire to reserve</span>
+        <div class="drop-name">Alignment Sticks</div>
+        <p class="drop-desc">Black and white or Isle Blue. Branded tip.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- COMMISSION — LIGHT -->
 <section id="commission">
   <div class="section-inner">
     <div class="row-label">
       <span class="tag">Commission</span>
-      
     </div>
     <h2 class="s-h2">Yours, <i>from the brief up.</i></h2>
     <div class="comm-grid" style="margin-top:2.4rem">
@@ -453,44 +483,11 @@ footer .f-cols{display:flex;gap:4rem;margin-bottom:3rem}
   </div>
 </section>
 
-<!-- DROPS — DARK -->
-<section id="drops" class="dark">
+<!-- MEMBERS — DARK -->
+<section id="members" class="dark">
   <div class="section-inner">
     <div class="row-label">
-      <span class="tag gold">Limited</span>
-      
-    </div>
-    <h2 class="s-h2">Limited runs, <i>by enquiry.</i></h2>
-    <p class="s-intro" style="margin-bottom:2.8rem">Fixed quantities. No public pricing. Members are notified first.</p>
-    <div class="drops-grid">
-      <div class="drop-card">
-        <img src="sticks-flatlay-opt.jpeg" alt="VX Alignment Sticks" style="width:100%;aspect-ratio:4/5;object-fit:cover;object-position:center;display:block;margin-bottom:1.2rem">
-        <span class="drop-status">Available — enquire to reserve</span>
-        <div class="drop-name">Alignment Sticks</div>
-        <p class="drop-desc">Black &amp; white or Isle Blue. Branded tip.</p>
-      </div>
-      <div class="drop-card">
-        <img src="qz-IMG_3821-opt.jpeg" alt="VX Quarter-Zip" style="width:100%;aspect-ratio:4/5;object-fit:cover;object-position:center top;display:block;margin-bottom:1.2rem">
-        <span class="drop-status">Available by commission</span>
-        <div class="drop-name">Quarter-Zip</div>
-        <p class="drop-desc">Stripe performance QZ. Four colourways.</p>
-      </div>
-      <div class="drop-card">
-        <img src="hoodie-isle-blue-opt.jpeg" alt="VX Performance Hoodie" style="width:100%;aspect-ratio:4/5;object-fit:cover;object-position:center top;display:block;margin-bottom:1.2rem">
-        <span class="drop-status">Final units — members first</span>
-        <div class="drop-name">Performance Hoodie</div>
-        <p class="drop-desc">Isle Blue. Remaining stock only.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- MEMBERS — LIGHT -->
-<section id="members">
-  <div class="section-inner">
-    <div class="row-label">
-      <span class="tag">VX Members Club</span>
-      
+      <span class="tag gold">VX Members Club</span>
     </div>
     <h2 class="s-h2">Not for everyone. <i>By design.</i></h2>
     <div style="margin-top:2.4rem">
@@ -509,12 +506,11 @@ footer .f-cols{display:flex;gap:4rem;margin-bottom:3rem}
   </div>
 </section>
 
-<!-- THE BRAND — DARK -->
+<!-- THE BRAND — LIGHT -->
 <section id="brand">
   <div class="section-inner">
     <div class="row-label">
-      <span class="tag gold">The Brand</span>
-      
+      <span class="tag">The Brand</span>
     </div>
     <h2 class="s-h2">Golf's traditions, <i>worn differently.</i></h2>
     <div class="brand-grid" style="margin-top:2.4rem">
@@ -530,12 +526,11 @@ footer .f-cols{display:flex;gap:4rem;margin-bottom:3rem}
   </div>
 </section>
 
-<!-- THE EDIT — LIGHT -->
-<section id="edit">
+<!-- THE EDIT — DARK -->
+<section id="edit" class="dark">
   <div class="section-inner">
     <div class="row-label">
-      <span class="tag">The Edit</span>
-      
+      <span class="tag gold">The Edit</span>
     </div>
     <h2 class="s-h2">The work, <i>as it stands.</i></h2>
     <div class="edit-grid" style="margin-top:2.6rem">
@@ -559,12 +554,11 @@ footer .f-cols{display:flex;gap:4rem;margin-bottom:3rem}
   </div>
 </section>
 
-<!-- CONTACT — DARK -->
-<section id="contact" class="dark">
+<!-- CONTACT — LIGHT -->
+<section id="contact">
   <div class="section-inner">
     <div class="row-label">
-      <span class="tag gold">Enquire</span>
-      
+      <span class="tag">Enquire</span>
     </div>
     <h2 class="s-h2">Get in touch.</h2>
     <div class="contact-grid" style="margin-top:2.4rem">
@@ -626,8 +620,8 @@ footer .f-cols{display:flex;gap:4rem;margin-bottom:3rem}
     <div class="f-col">
       <h4>Navigate</h4>
       <ul>
+        <li><a href="#drops">Limited</a></li>
         <li><a href="#commission">Commission</a></li>
-        <li><a href="#drops">Drops</a></li>
         <li><a href="#members">Members</a></li>
         <li><a href="#brand">The Brand</a></li>
         <li><a href="#edit">The Edit</a></li>
