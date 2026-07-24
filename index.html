@@ -162,7 +162,11 @@ section{padding:5.5rem 3rem}
 .s-intro{font-size:0.98rem;line-height:1.85;max-width:520px;color:#555048}
 .dark .s-intro{color:#b0a898}
 
-/* ============ SCORECARD STRIP ============ */
+/* ============ MEMBERS IMAGES ============ */
+.members-images{
+  display:grid;grid-template-columns:1fr 1fr;gap:1rem;
+}
+@media(max-width:600px){.members-images{grid-template-columns:1fr}}
 .scorecard-strip{
   background:var(--cream);
   border-bottom:1px solid var(--grey);
@@ -384,11 +388,11 @@ footer .f-cols{display:flex;gap:4rem;margin-bottom:3rem}
     <span class="word">Vintxge Golf</span>
   </a>
   <ul class="nav-links">
-    <li><a href="#edit">The Edit</a></li>
     <li><a href="#commission">Commission</a></li>
     <li><a href="#drops">Drops</a></li>
     <li><a href="#members">Members</a></li>
     <li><a href="#brand">The Brand</a></li>
+    <li><a href="#edit">The Edit</a></li>
     <li><a href="#contact" class="nav-cta">Enquire</a></li>
   </ul>
   <button class="hamburger" id="hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
@@ -396,11 +400,11 @@ footer .f-cols{display:flex;gap:4rem;margin-bottom:3rem}
 
 <div class="mob-nav" id="mobNav">
   <button class="mob-close" id="mobClose" aria-label="Close menu">✕</button>
-  <a href="#edit" class="mob-item">The Edit</a>
   <a href="#commission" class="mob-item">Commission</a>
   <a href="#drops" class="mob-item">Drops</a>
   <a href="#members" class="mob-item">Members</a>
   <a href="#brand" class="mob-item">The Brand</a>
+  <a href="#edit" class="mob-item">The Edit</a>
   <a href="#contact" class="mob-item">Enquire</a>
 </div>
 
@@ -424,41 +428,12 @@ footer .f-cols{display:flex;gap:4rem;margin-bottom:3rem}
   <span>United Kingdom</span>
 </div>
 
-<!-- THE EDIT — DARK -->
-<section id="edit" class="dark">
-  <div class="section-inner">
-    <div class="row-label">
-      <span class="tag gold">The Edit</span>
-      <span class="ct">01</span>
-    </div>
-    <h2 class="s-h2">The work, <i>as it stands.</i></h2>
-    <div class="edit-grid" style="margin-top:2.6rem">
-      <div class="edit-card">
-        <div class="frame"><img src="deeside-proshop.jpeg" alt="VX pro shop at Deeside Golf Club" loading="lazy"></div>
-        <div class="edit-pad cap"><b>Pro Shop</b><span>Deeside Golf Club</span></div>
-      </div>
-      <div class="edit-card">
-        <div class="frame"><img src="gary-ward-tour.png" alt="Gary Ward on the Farmfoods Tartan Pro Tour" loading="lazy"></div>
-        <div class="edit-pad cap"><b>Tour Sponsorship</b><span>Gary Ward · Tartan Pro Tour</span></div>
-      </div>
-      <div class="edit-card">
-        <div class="frame"><video src="vanity-friday.mp4" poster="vanity-poster.jpg" autoplay muted loop playsinline></video></div>
-        <div class="edit-pad cap"><b>Vanity Friday</b><span>Babylon Club</span></div>
-      </div>
-      <div class="edit-card">
-        <div class="frame"><video src="popup-market.mp4" poster="popup-poster.jpg" autoplay muted loop playsinline></video></div>
-        <div class="edit-pad cap"><b>Pop-Up</b><span>UK Market Activations</span></div>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- COMMISSION — LIGHT -->
 <section id="commission">
   <div class="section-inner">
     <div class="row-label">
       <span class="tag">Commission</span>
-      <span class="ct">02</span>
+      <span class="ct">01</span>
     </div>
     <h2 class="s-h2">Yours, <i>from the brief up.</i></h2>
     <div class="comm-grid" style="margin-top:2.4rem">
@@ -484,7 +459,7 @@ footer .f-cols{display:flex;gap:4rem;margin-bottom:3rem}
   <div class="section-inner">
     <div class="row-label">
       <span class="tag gold">Limited</span>
-      <span class="ct">03</span>
+      <span class="ct">02</span>
     </div>
     <h2 class="s-h2">Limited runs, <i>by enquiry.</i></h2>
     <p class="s-intro" style="margin-bottom:2.8rem">Fixed quantities. No public pricing. Members are notified first.</p>
@@ -515,41 +490,32 @@ footer .f-cols{display:flex;gap:4rem;margin-bottom:3rem}
 <section id="members">
   <div class="section-inner">
     <div class="row-label">
-      <span class="tag">VX Members</span>
-      <span class="ct">04</span>
+      <span class="tag">VX Members Club</span>
+      <span class="ct">03</span>
     </div>
-    <h2 class="s-h2">First word, <i>always.</i></h2>
-    <p class="s-intro" style="margin-bottom:2.4rem">Every drop and commission opening reaches members before it goes anywhere else.</p>
-    <div class="members-grid">
-      <div class="tier">
-        <div class="tier-name">Community</div>
-        <div class="tier-price">No cost</div>
-        <ul>
-          <li>Advance notice of every drop</li>
-          <li>Access to members-only content</li>
-          <li>Direct line for enquiries</li>
-        </ul>
-      </div>
-      <div class="tier featured">
-        <div class="tier-name">Inner Circle</div>
-        <div class="tier-price">Apply for access</div>
-        <ul>
-          <li>48-hour priority on every drop</li>
-          <li>First call on commission slots</li>
-          <li>One personalisation credit per year</li>
-          <li>Invited to VX events</li>
-        </ul>
+    <h2 class="s-h2">Not for everyone. <i>By design.</i></h2>
+    <div style="margin-top:2.4rem">
+      <img src="members-hero-opt.jpeg" alt="VX Members Club — Elite Access" style="width:100%;aspect-ratio:16/10;object-fit:cover;object-position:center top;display:block">
+      <div class="members-body" style="margin-top:2.4rem">
+        <p class="s-intro">A private, application-only collective. A closer relationship with the brand — for those who warrant it.</p>
+        <div class="comm-rows">
+          <div class="comm-row"><span class="n">i.</span><p>First access to every drop and commission opening, before it reaches anyone else</p></div>
+          <div class="comm-row"><span class="n">ii.</span><p>A direct line — private enquiries handled personally</p></div>
+          <div class="comm-row"><span class="n">iii.</span><p>Preferential terms on commissions, agreed privately</p></div>
+          <div class="comm-row"><span class="n">iv.</span><p>Subject to approval. Applications are reviewed individually.</p></div>
+        </div>
+        <a href="#contact" class="text-link">Apply for membership</a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- THE BRAND — LIGHT -->
-<section id="brand">
+<!-- THE BRAND — DARK -->
+<section id="brand" class="dark">
   <div class="section-inner">
     <div class="row-label">
-      <span class="tag">The Brand</span>
-      <span class="ct">05</span>
+      <span class="tag gold">The Brand</span>
+      <span class="ct">04</span>
     </div>
     <h2 class="s-h2">Golf's traditions, <i>worn differently.</i></h2>
     <div class="brand-grid" style="margin-top:2.4rem">
@@ -560,6 +526,35 @@ footer .f-cols{display:flex;gap:4rem;margin-bottom:3rem}
       </div>
       <div class="brand-photo">
         <img src="qz-IMG_3832-opt.jpeg" alt="Vintxge Golf" style="width:100%;aspect-ratio:4/5;object-fit:cover;object-position:center top;display:block">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- THE EDIT — LIGHT -->
+<section id="edit">
+  <div class="section-inner">
+    <div class="row-label">
+      <span class="tag">The Edit</span>
+      <span class="ct">05</span>
+    </div>
+    <h2 class="s-h2">The work, <i>as it stands.</i></h2>
+    <div class="edit-grid" style="margin-top:2.6rem">
+      <div class="edit-card">
+        <div class="frame"><img src="deeside-proshop.jpeg" alt="VX pro shop at Deeside Golf Club" loading="lazy"></div>
+        <div class="edit-pad cap"><b>Pro Shop</b><span>Deeside Golf Club</span></div>
+      </div>
+      <div class="edit-card">
+        <div class="frame"><img src="gary-ward-tour.png" alt="Gary Ward on the Farmfoods Tartan Pro Tour" loading="lazy"></div>
+        <div class="edit-pad cap"><b>Tour Sponsorship</b><span>Gary Ward · Tartan Pro Tour</span></div>
+      </div>
+      <div class="edit-card">
+        <div class="frame"><video src="vanity-friday.mp4" poster="vanity-poster.jpg" autoplay muted loop playsinline></video></div>
+        <div class="edit-pad cap"><b>Vanity Friday</b><span>Babylon Club</span></div>
+      </div>
+      <div class="edit-card">
+        <div class="frame"><video src="popup-market.mp4" poster="popup-poster.jpg" autoplay muted loop playsinline></video></div>
+        <div class="edit-pad cap"><b>Pop-Up</b><span>UK Market Activations</span></div>
       </div>
     </div>
   </div>
@@ -599,7 +594,7 @@ footer .f-cols{display:flex;gap:4rem;margin-bottom:3rem}
           <select id="type" name="type">
             <option>Bespoke commission</option>
             <option>Limited drop reservation</option>
-            <option>Members Club</option>
+            <option>Members Club application</option>
             <option>Club / Pennant team / corporate order</option>
             <option>General enquiry</option>
           </select>
@@ -632,11 +627,11 @@ footer .f-cols{display:flex;gap:4rem;margin-bottom:3rem}
     <div class="f-col">
       <h4>Navigate</h4>
       <ul>
-        <li><a href="#edit">The Edit</a></li>
         <li><a href="#commission">Commission</a></li>
         <li><a href="#drops">Drops</a></li>
         <li><a href="#members">Members</a></li>
         <li><a href="#brand">The Brand</a></li>
+        <li><a href="#edit">The Edit</a></li>
         <li><a href="#contact">Enquire</a></li>
       </ul>
     </div>
