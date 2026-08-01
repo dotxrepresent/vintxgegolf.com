@@ -854,7 +854,7 @@ function togglePanel(id){
 // MEMBERS CODE GATE
 function checkMembersCode(){
   const code = document.getElementById('m-code').value.trim().toUpperCase();
-  const valid = /^[A-Z]{2}9898$/.test(code);
+  const valid = /^([A-Z]{2})?9898$/.test(code);
   const error = document.getElementById('mCodeError');
   if(valid){
     document.getElementById('mCodeGate').style.display = 'none';
