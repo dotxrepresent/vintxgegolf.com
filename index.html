@@ -269,10 +269,37 @@ section{padding:5.5rem 3rem}
 
 /* ============ BRAND — LIGHT ============ */
 #brand{background:var(--cream);color:var(--black)}
-.brand-grid{display:grid;grid-template-columns:1fr 1fr;gap:4.5rem;align-items:start}
-@media(max-width:880px){.brand-grid{grid-template-columns:1fr;gap:2.5rem}}
-.brand-body p{font-size:0.98rem;line-height:1.9;color:var(--black);margin-bottom:1.3rem;max-width:480px}
-.brand-photo .ph{aspect-ratio:4/5;min-height:auto}
+.brand-body{max-width:700px}
+.brand-body p{font-size:0.98rem;line-height:1.9;color:var(--black);margin-bottom:1.1rem}
+.brand-float{float:right;width:210px;margin:0 0 1.4rem 2.2rem}
+.brand-float img{width:100%;aspect-ratio:2/3;object-fit:cover;object-position:center top;display:block}
+.brand-clearfix::after{content:'';display:table;clear:both}
+.brand-founders{
+  display:grid;grid-template-columns:1fr 1fr;gap:1rem;
+  margin-top:2.8rem;padding-top:2.4rem;
+  border-top:1px solid var(--grey);
+  max-width:480px;
+}
+.founder{position:relative;overflow:hidden}
+.founder-photo{
+  width:100%;aspect-ratio:1/1;overflow:hidden;
+  background:#e9e5d9;border:1px dashed var(--black);
+  display:flex;align-items:center;justify-content:center;
+  text-align:center;font-family:var(--mono);font-size:0.6rem;
+  letter-spacing:.06em;text-transform:uppercase;color:var(--black);
+  padding:1rem;line-height:1.6;
+}
+.founder-photo img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block}
+.founder-overlay{
+  position:absolute;bottom:0;left:0;right:0;
+  padding:.6rem .8rem;
+  background:linear-gradient(to top, rgba(26,26,26,0.82), transparent);
+  font-family:var(--serif);font-size:0.82rem;color:#ffffff;font-style:italic;
+}
+@media(max-width:600px){
+  .brand-float{width:130px;margin:0 0 1rem 1.2rem}
+  .brand-founders{max-width:100%}
+}
 
 .scorecard{margin-top:2.8rem;border-top:1px solid var(--grey)}
 .sc-row{
@@ -652,16 +679,28 @@ footer .f-cols{display:flex;gap:4rem;margin-bottom:3rem}
       <span class="tag">The Brand</span>
     </div>
     <h2 class="s-h2">Golf's traditions, <i>worn differently.</i></h2>
-    <div class="brand-grid" style="margin-top:2.4rem">
-      <div class="brand-body">
-        <p>Vintxge Golf was established in 2022 with a clear purpose. Golf is entering a new era, drawing in a broader, more considered audience. We set out to dress that shift.</p>
-        <p>We strike a balance between the heritage of the game and the direction it is moving in. On the course and beyond it. The <span style="font-style:italic;font-family:var(--serif)">x</span> in Vintxge is our own twist on traditions. It stands for everything the game is becoming, without losing sight of what it has always been.</p><p style="font-family:var(--serif);font-style:italic;margin-top:1.4rem;font-size:1.05rem">Welcome to Vintxge Golf.</p>
-        
+
+    <div class="brand-body brand-clearfix" style="margin-top:2.4rem">
+      <div class="brand-float">
+        <img src="brand-model-opt.jpeg" alt="Vintxge Golf">
       </div>
-      <div class="brand-photo">
-        <img src="brand-model-opt.jpeg" alt="Vintxge Golf" style="width:100%;aspect-ratio:4/5;object-fit:cover;object-position:center top;display:block">
+      <p>Vintxge Golf was established with a clear purpose. Golf is entering a new era, drawing in a broader, more considered audience. We set out to dress that shift.</p>
+      <p>We strike a balance between the heritage of the game and the direction it is moving in. On the course and beyond it. The <span style="font-style:italic;font-family:var(--serif)">x</span> in Vintxge is our own twist on traditions. It stands for everything the game is becoming, without losing sight of what it has always been.</p>
+      <p style="color:#888070;font-size:0.84rem;font-family:var(--mono);letter-spacing:.04em;text-transform:uppercase;margin-top:1.6rem">Founded 2022 · United Kingdom<br>Founding owners — Matthew Lynas &amp; Craig Leith</p>
+      <p style="font-family:var(--serif);font-style:italic;margin-top:1.4rem;font-size:1.05rem">Welcome to Vintxge Golf.</p>
+    </div>
+
+    <div class="brand-founders">
+      <div class="founder">
+        <div class="founder-photo"><img src="matthew-opt.jpeg" alt="Matthew Lynas"></div>
+        <div class="founder-overlay">Matthew Lynas</div>
+      </div>
+      <div class="founder">
+        <div class="founder-photo"><img src="craig-opt.jpeg" alt="Craig Leith"></div>
+        <div class="founder-overlay">Craig Leith</div>
       </div>
     </div>
+
   </div>
 </section>
 
