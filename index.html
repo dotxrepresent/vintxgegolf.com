@@ -162,7 +162,34 @@ section{padding:5.5rem 3rem}
 .s-intro{font-size:0.98rem;line-height:1.85;max-width:520px;color:#555048}
 .dark .s-intro{color:#b0a898}
 
-/* ============ QZ CAROUSEL ============ */
+/* ============ MEMBERS FORMS ============ */
+.members-forms{margin-top:2.4rem;display:flex;flex-direction:column;gap:.6rem}
+.members-panel{border:1px solid #3a3830}
+.members-panel-btn{
+  width:100%;display:flex;justify-content:space-between;align-items:center;
+  padding:1.1rem 1.4rem;background:transparent;border:none;cursor:pointer;
+  font-family:var(--mono);font-size:0.72rem;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--white);text-align:left;transition:background .2s;
+}
+.members-panel-btn:hover{background:rgba(255,255,255,0.04)}
+.members-panel-btn.open{background:rgba(255,255,255,0.06)}
+.panel-arrow{font-size:1.1rem;color:var(--gold);transition:transform .25s;line-height:1;flex-shrink:0}
+.members-panel-btn.open .panel-arrow{transform:rotate(45deg)}
+.members-panel-body{
+  display:none;padding:1.4rem;border-top:1px solid #3a3830;
+}
+.members-panel-body.open{display:block}
+.members-code-label{font-family:var(--mono);font-size:0.6rem;letter-spacing:.07em;text-transform:uppercase;color:#888070;margin-bottom:.5rem;display:block}
+.members-code-row{display:flex;gap:.8rem;align-items:flex-end}
+.members-code-row input{flex:1;background:transparent;border:none;border-bottom:1px solid #3a3830;padding:.7rem 0;font-family:var(--body);font-size:0.95rem;color:var(--white);border-radius:0}
+.members-code-row input:focus{outline:none;border-color:var(--gold)}
+.members-code-row .form-submit{margin-top:0;padding:.7rem 1.2rem;flex-shrink:0;background:transparent;border:1px solid #3a3830;color:var(--white)}
+.members-code-row .form-submit:hover{background:var(--gold);border-color:var(--gold)}
+#members .form input,#members .form textarea{background:transparent;border-bottom:1px solid #3a3830;color:var(--white)}
+#members .form input:focus,#members .form textarea:focus{border-color:var(--gold)}
+#members .form label{color:#888070}
+#members .form-submit{background:transparent;border:1px solid #3a3830;color:var(--white)}
+#members .form-submit:hover{background:var(--gold);border-color:var(--gold)}
 .qz-carousel{position:relative;overflow:hidden}
 .qz-slides{display:flex;transition:transform .5s ease}
 .qz-slides img{flex-shrink:0;width:100%}
@@ -532,10 +559,87 @@ footer .f-cols{display:flex;gap:4rem;margin-bottom:3rem}
         <div class="comm-rows" style="border-top:1px solid #3a3830;margin-top:1.8rem">
           <div class="comm-row" style="border-bottom:1px solid #3a3830"><span class="n">i.</span><p style="color:#ffffff">First access to every new release before it reaches anyone else</p></div>
           <div class="comm-row" style="border-bottom:1px solid #3a3830"><span class="n">ii.</span><p style="color:#ffffff">A direct line for private enquiries, handled personally</p></div>
-          <div class="comm-row" style="border-bottom:1px solid #3a3830"><span class="n">iii.</span><p style="color:#ffffff">Preferential terms on commissions, agreed privately</p></div>
+          <div class="comm-row" style="border-bottom:1px solid #3a3830"><span class="n">iii.</span><p style="color:#ffffff">Preferential terms on orders, agreed privately</p></div>
           <div class="comm-row" style="border-bottom:1px solid #3a3830"><span class="n">iv.</span><p style="color:#ffffff">Subject to approval. Applications are reviewed individually.</p></div>
         </div>
-        <a href="#contact" class="text-link" style="color:#ffffff;border-color:rgba(255,255,255,0.3)">Apply for membership</a>
+
+        <!-- MEMBERS FORMS -->
+        <div class="members-forms">
+
+          <!-- CURRENT MEMBER ENQUIRY -->
+          <div class="members-panel" id="panelEnquiry">
+            <button class="members-panel-btn" onclick="togglePanel('panelEnquiry')">
+              <span>Current member enquiry</span>
+              <span class="panel-arrow">+</span>
+            </button>
+            <div class="members-panel-body">
+              <div id="mCodeGate" style="margin-bottom:1.4rem">
+                <label for="m-code" class="members-code-label">Members code</label>
+                <div class="members-code-row">
+                  <input type="text" id="m-code" placeholder="Enter your code" autocomplete="off" maxlength="6">
+                  <button type="button" class="form-submit" onclick="checkMembersCode()">Access</button>
+                </div>
+                <p id="mCodeError" style="display:none;font-family:var(--mono);font-size:0.62rem;color:#c0392b;margin-top:.6rem;letter-spacing:.04em">Invalid code. Please check and try again.</p>
+              </div>
+              <form class="form" id="mEnquiryForm" action="https://formspree.io/f/mvzezqzn" method="POST" style="display:none">
+                <input type="hidden" name="enquiry_type" value="VX Members Enquiry">
+                <input type="hidden" id="m-code-hidden" name="members_code">
+                <div>
+                  <label for="me-name">Name</label>
+                  <input type="text" id="me-name" name="name" required>
+                </div>
+                <div>
+                  <label for="me-email">Email</label>
+                  <input type="email" id="me-email" name="email" required>
+                </div>
+                <div>
+                  <label for="me-message">Your enquiry</label>
+                  <textarea id="me-message" name="message" required></textarea>
+                </div>
+                <button type="submit" class="form-submit">Send</button>
+                <div class="f-success" id="mEnquirySuccess">
+                  <b>Enquiry received.</b>
+                  We'll be in touch within 24 hours.
+                </div>
+              </form>
+            </div>
+          </div>
+
+          <!-- MEMBERSHIP APPLICATION -->
+          <div class="members-panel" id="panelApply">
+            <button class="members-panel-btn" onclick="togglePanel('panelApply')">
+              <span>Apply for membership</span>
+              <span class="panel-arrow">+</span>
+            </button>
+            <div class="members-panel-body">
+              <form class="form" id="mApplyForm" action="https://formspree.io/f/mvzezqzn" method="POST">
+                <input type="hidden" name="enquiry_type" value="VX Members Club Application">
+                <div>
+                  <label for="m-name">Name</label>
+                  <input type="text" id="m-name" name="name" required>
+                </div>
+                <div>
+                  <label for="m-email">Email</label>
+                  <input type="email" id="m-email" name="email" required>
+                </div>
+                <div>
+                  <label for="m-role">Your connection to golf</label>
+                  <input type="text" id="m-role" name="golf_connection" placeholder="e.g. Professional golfer, club representative">
+                </div>
+                <div>
+                  <label for="m-note">Anything else you'd like us to know</label>
+                  <textarea id="m-note" name="message" style="min-height:70px"></textarea>
+                </div>
+                <button type="submit" class="form-submit">Submit application</button>
+                <div class="f-success" id="mApplySuccess">
+                  <b>Application received.</b>
+                  We review all applications personally and will be in touch within 24 hours.
+                </div>
+              </form>
+            </div>
+          </div>
+
+        </div>
       </div>
     </div>
   </div>
@@ -550,9 +654,9 @@ footer .f-cols{display:flex;gap:4rem;margin-bottom:3rem}
     <h2 class="s-h2">Golf's traditions, <i>worn differently.</i></h2>
     <div class="brand-grid" style="margin-top:2.4rem">
       <div class="brand-body">
-        <p>Vintxge Golf was founded on a singular premise. That the traditions of golf and a more considered, modern approach to how it is worn are not in opposition.</p>
-        <p>We hold the heritage of the game in the highest regard. We are equally attentive to where the game is heading. Vintxge occupies that space. The X is algebraic. It stands for our own interpretation of tradition, and the direction golf is moving in.</p>
-        <p>Established in the United Kingdom. Shipped worldwide.</p>
+        <p>Vintxge Golf was established in 2022 with a clear purpose. Golf is entering a new era, drawing in a broader, more considered audience. We set out to dress that shift.</p>
+        <p>We strike a balance between the heritage of the game and the direction it is moving in. On the course and beyond it. The <span style="font-style:italic;font-family:var(--serif)">x</span> in Vintxge is our own twist on traditions. It stands for everything the game is becoming, without losing sight of what it has always been.</p><p style="font-family:var(--serif);font-style:italic;margin-top:1.4rem;font-size:1.05rem">Welcome to Vintxge Golf.</p>
+        
       </div>
       <div class="brand-photo">
         <img src="brand-model-opt.jpeg" alt="Vintxge Golf" style="width:100%;aspect-ratio:4/5;object-fit:cover;object-position:center top;display:block">
@@ -619,16 +723,11 @@ footer .f-cols{display:flex;gap:4rem;margin-bottom:3rem}
         </div>
         <div>
           <label for="type">Enquiry type</label>
-          <select id="type" name="type" onchange="toggleMembersCode(this.value)">
+          <select id="type" name="type">
             <option>Current release reservation</option>
             <option>Bespoke design enquiry</option>
-            <option>VX Members Club application</option>
             <option>General enquiry</option>
           </select>
-        </div>
-        <div id="members-code-field" style="display:none">
-          <label for="members-code">Members Code</label>
-          <input type="text" id="members-code" name="members_code" placeholder="Enter your members code" autocomplete="off">
         </div>
         <div>
           <label for="message">Your enquiry</label>
@@ -696,39 +795,68 @@ footer .f-cols{display:flex;gap:4rem;margin-bottom:3rem}
 </footer>
 
 <script>
-// MEMBERS CODE
-function toggleMembersCode(val) {
-  const field = document.getElementById('members-code-field');
-  const input = document.getElementById('members-code');
-  if(val === 'VX Members Club application') {
-    field.style.display = 'block';
-    input.required = true;
+// MEMBERS PANEL TOGGLE
+function togglePanel(id){
+  const panel = document.getElementById(id);
+  const btn = panel.querySelector('.members-panel-btn');
+  const body = panel.querySelector('.members-panel-body');
+  const isOpen = body.classList.contains('open');
+  // Close all panels first
+  document.querySelectorAll('.members-panel-body').forEach(b => b.classList.remove('open'));
+  document.querySelectorAll('.members-panel-btn').forEach(b => b.classList.remove('open'));
+  // Open this one if it was closed
+  if(!isOpen){ body.classList.add('open'); btn.classList.add('open'); }
+}
+
+// MEMBERS CODE GATE
+function checkMembersCode(){
+  const code = document.getElementById('m-code').value.trim().toUpperCase();
+  const valid = /^[A-Z]{2}9898$/.test(code);
+  const error = document.getElementById('mCodeError');
+  if(valid){
+    document.getElementById('mCodeGate').style.display = 'none';
+    document.getElementById('mEnquiryForm').style.display = 'flex';
+    document.getElementById('m-code-hidden').value = code;
   } else {
-    field.style.display = 'none';
-    input.required = false;
-    input.value = '';
+    error.style.display = 'block';
+    document.getElementById('m-code').style.borderColor = '#c0392b';
   }
 }
 
-// Validate members code on submit. Must be 2 letters followed by 9898
+// MEMBERS APPLICATION FORM
 (function(){
-  const form = document.getElementById('cForm');
+  const form = document.getElementById('mApplyForm');
+  const succ = document.getElementById('mApplySuccess');
   if(!form) return;
-  form.addEventListener('submit', function(e) {
-    const typeEl = document.getElementById('type');
-    if(typeEl && typeEl.value === 'Members Club application') {
-      const code = document.getElementById('members-code').value.trim().toUpperCase();
-      const valid = /^[A-Z]{2}9898$/.test(code);
-      if(!valid) {
-        e.preventDefault();
-        e.stopImmediatePropagation();
-        document.getElementById('members-code').style.borderColor = 'red';
-        document.getElementById('members-code').placeholder = 'Invalid code. Please check and try again.';
-        return false;
-      }
-    }
-  }, true);
+  form.addEventListener('submit', async e => {
+    e.preventDefault();
+    const btn = form.querySelector('button[type="submit"]');
+    btn.disabled = true; btn.textContent = 'Sending…';
+    try {
+      const res = await fetch(form.action, {method:'POST', body:new FormData(form), headers:{'Accept':'application/json'}});
+      if(res.ok){ form.querySelectorAll('div,button').forEach(el=>el.style.display='none'); succ.style.display='block'; }
+      else { btn.disabled=false; btn.textContent='Submit application'; }
+    } catch { btn.disabled=false; btn.textContent='Submit application'; }
+  });
 })();
+
+// MEMBERS ENQUIRY FORM
+(function(){
+  const form = document.getElementById('mEnquiryForm');
+  const succ = document.getElementById('mEnquirySuccess');
+  if(!form) return;
+  form.addEventListener('submit', async e => {
+    e.preventDefault();
+    const btn = form.querySelector('button[type="submit"]');
+    btn.disabled = true; btn.textContent = 'Sending…';
+    try {
+      const res = await fetch(form.action, {method:'POST', body:new FormData(form), headers:{'Accept':'application/json'}});
+      if(res.ok){ form.querySelectorAll('div,button').forEach(el=>el.style.display='none'); succ.style.display='block'; }
+      else { btn.disabled=false; btn.textContent='Send'; }
+    } catch { btn.disabled=false; btn.textContent='Send'; }
+  });
+})();
+
 (function(){
   let current = 0;
   const slides = document.querySelector('.qz-slides');
