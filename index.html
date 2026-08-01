@@ -276,20 +276,22 @@ section{padding:5.5rem 3rem}
 .brand-clearfix::after{content:'';display:table;clear:both}
 .brand-founders{
   display:grid;grid-template-columns:1fr 1fr;gap:1rem;
-  margin-top:2.8rem;padding-top:2.4rem;
-  border-top:1px solid var(--grey);
+  margin-top:1.2rem;
   max-width:480px;
 }
 .founder{position:relative;overflow:hidden}
 .founder-photo{
   width:100%;aspect-ratio:1/1;overflow:hidden;
-  background:#e9e5d9;border:1px dashed var(--black);
+  background:#e9e5d9;
   display:flex;align-items:center;justify-content:center;
   text-align:center;font-family:var(--mono);font-size:0.6rem;
   letter-spacing:.06em;text-transform:uppercase;color:var(--black);
-  padding:1rem;line-height:1.6;
+  padding:0;line-height:1.6;
 }
-.founder-photo img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block}
+.founder-photo img{
+  width:100%;height:100%;object-fit:cover;
+  object-position:center top;display:block;
+}
 .founder-overlay{
   position:absolute;bottom:0;left:0;right:0;
   padding:.6rem .8rem;
@@ -686,8 +688,10 @@ footer .f-cols{display:flex;gap:4rem;margin-bottom:3rem}
       </div>
       <p>Vintxge Golf was established with a clear purpose. Golf is entering a new era, drawing in a broader, more considered audience. We set out to dress that shift.</p>
       <p>We strike a balance between the heritage of the game and the direction it is moving in. On the course and beyond it. The <span style="font-style:italic;font-family:var(--serif)">x</span> in Vintxge is our own twist on traditions. It stands for everything the game is becoming, without losing sight of what it has always been.</p>
-      <p style="color:#888070;font-size:0.84rem;font-family:var(--mono);letter-spacing:.04em;text-transform:uppercase;margin-top:1.6rem">Founded 2022 · United Kingdom<br>Founding owners — Matthew Lynas &amp; Craig Leith</p>
-      <p style="font-family:var(--serif);font-style:italic;margin-top:1.4rem;font-size:1.05rem">Welcome to Vintxge Golf.</p>
+      <p style="font-family:var(--serif);font-style:italic;margin-top:1rem;font-size:1.05rem">Welcome to Vintxge Golf.</p>
+      <div style="border-top:1px solid var(--grey);margin-top:1.2rem;padding-top:1rem">
+        <p style="color:#888070;font-size:0.78rem;font-family:var(--mono);letter-spacing:.04em;text-transform:uppercase;line-height:2">Founded 2022 · United Kingdom<br>Founding Owners · Matthew Lynas &amp; Craig Leith</p>
+      </div>
     </div>
 
     <div class="brand-founders">
