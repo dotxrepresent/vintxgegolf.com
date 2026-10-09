@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light only">
+<meta name="supported-color-schemes" content="light">
+<meta name="theme-color" content="#f5f0e8">
+<title>VX Members Club | Vintxge Golf</title>
+<meta name="description" content="The VX Members Club. A private, application only collective with first access to every Vintxge Golf release.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://vintxgegolf.com/members">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta property="og:type" content="website">
+<meta property="og:title" content="VX Members Club | Vintxge Golf">
+<meta property="og:description" content="The VX Members Club. A private, application only collective with first access to every Vintxge Golf release.">
+<meta property="og:url" content="https://vintxgegolf.com/members">
+<meta property="og:image" content="https://vintxgegolf.com/hero-opt.jpeg">
+<meta property="og:site_name" content="Vintxge Golf">
+<meta property="og:locale" content="en_GB">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="VX Members Club | Vintxge Golf">
+<meta name="twitter:description" content="The VX Members Club. A private, application only collective with first access to every Vintxge Golf release.">
+<meta name="twitter:image" content="https://vintxgegolf.com/hero-opt.jpeg">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Jost:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/vx.css">
+</head>
+<body>
+
+<nav>
+  <a href="/" class="nav-mark">
+    <img src="/vx-mark-black.png" alt="Vx">
+    <span class="bar"></span>
+    <span class="word">Vintxge Golf</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="/shop">Shop</a></li>
+    <li><a href="/bespoke">Bespoke</a></li>
+    <li><a href="/members" class="active">VX Members Club</a></li>
+    <li><a href="/story">Our Story</a></li>
+    <li><a href="/#contact" class="nav-cta">Enquire</a></li>
+  </ul>
+  <div class="nav-right">
+    <button type="button" class="bk-btn" aria-label="Open your enquiry">Enquiry <span class="bk-count">0</span></button>
+    <button class="hamburger" id="hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<div class="mob-nav" id="mobNav">
+  <button class="mob-close" id="mobClose" aria-label="Close menu">✕</button>
+  <a href="/" class="mob-item">Home</a>
+  <a href="/shop" class="mob-item">Shop</a>
+  <a href="/bespoke" class="mob-item">Bespoke</a>
+  <a href="/members" class="mob-item">VX Members Club</a>
+  <a href="/story" class="mob-item">Our Story</a>
+  <a href="/#contact" class="mob-item">Enquire</a>
+</div>
+<div style="height:61.8px"></div>
+<section id="members" class="dark" style="padding-top:4.5rem">
+  <div class="section-inner">
+    <div class="row-label" style="border-color:#3a3830">
+      <span class="tag" style="color:var(--gold)">VX Members Club</span>
+    </div>
+    <h1 class="s-h2" style="color:#ffffff;font-size:clamp(2rem,4.4vw,3.4rem)">Not for everyone. <i>By design.</i></h1>
+    <div style="margin-top:2.4rem">
+      <img src="/members-hero-opt.jpeg" alt="VX Members Club" style="width:100%;aspect-ratio:4/5;object-fit:cover;object-position:center center;display:block">
+      <div class="members-body" style="margin-top:2.4rem">
+        <p class="s-intro" style="color:#b0a898">A private, application-only collective. Reserved for those with a genuine connection to the game and the brand.</p>
+        <div class="comm-rows" style="border-top:1px solid #3a3830;margin-top:1.8rem">
+          <div class="comm-row" style="border-bottom:1px solid #3a3830"><span class="n">i.</span><p style="color:#ffffff">First access to every new release before it reaches anyone else</p></div>
+          <div class="comm-row" style="border-bottom:1px solid #3a3830"><span class="n">ii.</span><p style="color:#ffffff">A direct line for private enquiries, handled personally</p></div>
+          <div class="comm-row" style="border-bottom:1px solid #3a3830"><span class="n">iii.</span><p style="color:#ffffff">Preferential terms on orders, agreed privately</p></div>
+          <div class="comm-row" style="border-bottom:1px solid #3a3830"><span class="n">iv.</span><p style="color:#ffffff">Subject to approval. Applications are reviewed individually.</p></div>
+        </div>
+
+        <!-- MEMBERS FORMS -->
+        <div class="members-forms">
+
+          <!-- CURRENT MEMBER ENQUIRY -->
+          <div class="members-panel" id="panelEnquiry">
+            <button class="members-panel-btn" onclick="togglePanel('panelEnquiry')">
+              <span>Current member enquiry</span>
+              <span class="panel-arrow">+</span>
+            </button>
+            <div class="members-panel-body">
+              <div id="mCodeGate" style="margin-bottom:1.4rem">
+                <label for="m-code" class="members-code-label">Members code</label>
+                <div class="members-code-row">
+                  <input type="text" id="m-code" placeholder="Enter your code" autocomplete="off" maxlength="6">
+                  <button type="button" class="form-submit" onclick="checkMembersCode()">Access</button>
+                </div>
+                <p id="mCodeError" style="display:none;font-family:var(--mono);font-size:0.62rem;color:#c0392b;margin-top:.6rem;letter-spacing:.04em">Invalid code. Please check and try again.</p>
+              </div>
+              <form class="form" id="mEnquiryForm" action="https://formspree.io/f/mvzezqzn" method="POST" style="display:none">
+                <input type="hidden" name="enquiry_type" value="VX Members Enquiry">
+                <input type="hidden" id="m-code-hidden" name="members_code">
+                <div>
+                  <label for="me-name">Name</label>
+                  <input type="text" id="me-name" name="name" required>
+                </div>
+                <div>
+                  <label for="me-email">Email</label>
+                  <input type="email" id="me-email" name="email" required>
+                </div>
+                <div>
+                  <label for="me-message">Your enquiry</label>
+                  <textarea id="me-message" name="message" required></textarea>
+                </div>
+                <button type="submit" class="form-submit">Send</button>
+                <div class="f-success" id="mEnquirySuccess">
+                  <b>Enquiry received.</b>
+                  We'll be in touch within 24 hours.
+                </div>
+              </form>
+            </div>
+          </div>
+
+          <!-- MEMBERSHIP APPLICATION -->
+          <div class="members-panel" id="panelApply">
+            <button class="members-panel-btn" onclick="togglePanel('panelApply')">
+              <span>Apply for membership</span>
+              <span class="panel-arrow">+</span>
+            </button>
+            <div class="members-panel-body">
+              <form class="form" id="mApplyForm" action="https://formspree.io/f/mvzezqzn" method="POST">
+                <input type="hidden" name="enquiry_type" value="VX Members Club Application">
+                <div>
+                  <label for="m-name">Name</label>
+                  <input type="text" id="m-name" name="name" required>
+                </div>
+                <div>
+                  <label for="m-email">Email</label>
+                  <input type="email" id="m-email" name="email" required>
+                </div>
+                <div>
+                  <label for="m-role">Your connection to golf</label>
+                  <input type="text" id="m-role" name="golf_connection" placeholder="e.g. Professional golfer, club representative">
+                </div>
+                <div>
+                  <label for="m-note">Anything else you'd like us to know</label>
+                  <textarea id="m-note" name="message" style="min-height:70px"></textarea>
+                </div>
+                <button type="submit" class="form-submit">Submit application</button>
+                <div class="f-success" id="mApplySuccess">
+                  <b>Application received.</b>
+                  We review all applications personally and will be in touch within 24 hours.
+                </div>
+              </form>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ENQUIRY BASKET -->
+<div class="bk-overlay" id="bkOverlay"></div>
+<aside class="bk-drawer" id="bkDrawer" aria-hidden="true" aria-label="Your enquiry">
+  <div class="bk-head"><h3>Your enquiry</h3><button type="button" class="bk-close" aria-label="Close">✕</button></div>
+  <div class="bk-body">
+    <div id="bkList"></div>
+    <div class="bk-sum" id="bkSum"></div>
+    <div class="bk-step" id="bkStep" style="display:none">
+      <h4>Send your enquiry</h4>
+      <div class="bk-form">
+        <form class="form" id="basketForm" action="https://formspree.io/f/mvzezqzn" method="POST">
+          <input type="hidden" name="enquiry_type" value="Enquiry basket">
+          <input type="hidden" name="basket_summary">
+          <input type="hidden" name="basket_items">
+          <input type="hidden" name="in_stock_total">
+          <div><label for="bk-name">Name</label><input type="text" id="bk-name" name="name" required></div>
+          <div><label for="bk-email">Email</label><input type="email" id="bk-email" name="email" required></div>
+          <div><label for="bk-phone">Phone (optional)</label><input type="tel" id="bk-phone" name="phone"></div>
+          <div><label for="bk-country">Delivery country</label><input type="text" id="bk-country" name="delivery_country" value="United Kingdom" required></div>
+          <div><label for="bk-note">Anything else we should know</label><textarea id="bk-note" name="message" style="min-height:70px" placeholder="Team or club order, deadlines, embroidery details"></textarea></div>
+          <button type="submit" class="form-submit">Send enquiry</button>
+        </form>
+      </div>
+      <div class="bk-done" id="bkDone"><b>Enquiry received.</b><p>Thank you. We will reply personally within 24 hours to confirm availability, pricing and delivery. No payment is taken online.</p></div>
+    </div>
+  </div>
+</aside>
+
+<footer>
+  <div class="f-inner">
+  <div class="f-brand">
+    <div class="f-mark">
+      <img src="/vx-mark-white.png" alt="Vx">
+      <span class="bar"></span>
+      <span class="word">Vintxge Golf</span>
+    </div>
+    <p class="f-tagline">Golf apparel. Bespoke design<br>and limited releases, by enquiry only.</p>
+  </div>
+  <div class="f-cols">
+    <div class="f-col">
+      <h4>Navigate</h4>
+      <ul>
+        <li><a href="/shop">Shop</a></li>
+        <li><a href="/bespoke">Bespoke</a></li>
+        <li><a href="/members">VX Members Club</a></li>
+        <li><a href="/story">Our Story</a></li>
+        <li><a href="/#contact">Enquiries</a></li>
+      </ul>
+    </div>
+    <div class="f-col">
+      <h4>Connect</h4>
+      <ul>
+        <li><a href="https://www.instagram.com/vintxgegolf/" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+        <li><a href="https://www.tiktok.com/@vintxgegolf" target="_blank" rel="noopener noreferrer">TikTok</a></li>
+        <li><a href="https://www.facebook.com/profile.php?id=61550872304245" target="_blank" rel="noopener noreferrer">Facebook</a></li>
+        <li><a href="mailto:vintxgegolf@outlook.com">vintxgegolf@outlook.com</a></li>
+      </ul>
+    </div>
+    <div class="f-col">
+      <h4>Sizing</h4>
+      <ul><li><a href="/sizing-guide">Sizing Guide</a></li></ul>
+      <h4 style="margin-top:1.6rem">Legal</h4>
+      <ul>
+        <li><a href="/terms-and-conditions">Terms &amp; Conditions</a></li>
+        <li><a href="/privacy-policy">Privacy Policy</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="f-bottom">
+    <span class="f-copy">© 2026 Vintxge Golf · United Kingdom</span>
+    <a href="https://dotxrepresentative.com" target="_blank" rel="noopener noreferrer" class="f-built">
+      <img src="/dotx-logo-white.png" alt="dot.x">
+      Built by dot.x
+    </a>
+  </div>
+  </div>
+</footer>
+<script src="/vx.js"></script>
+<script src="/vx-kit.js"></script>
+</body>
+</html>
