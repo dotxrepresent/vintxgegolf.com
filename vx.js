@@ -192,5 +192,14 @@
   var hb=$('#hamburger'),mob=$('#mobNav'),mc=$('#mobClose');
   if(hb){hb.addEventListener('click',function(){mob.classList.add('open');document.body.style.overflow='hidden'});mc.addEventListener('click',function(){mob.classList.remove('open');document.body.style.overflow=''});$$('.mob-item',mob).forEach(function(a){a.addEventListener('click',function(){mob.classList.remove('open');document.body.style.overflow=''})})}
 
+  /* ---------- custom cursor ---------- */
+  var cur=$('#cursor'),ring=$('#cursorRing');
+  if(cur&&ring&&window.matchMedia('(pointer:fine)').matches){
+    var mx=0,my=0,rx=0,ry=0;
+    document.addEventListener('mousemove',function(e){mx=e.clientX;my=e.clientY;cur.style.left=mx+'px';cur.style.top=my+'px'});
+    (function loop(){rx+=(mx-rx)*.12;ry+=(my-ry)*.12;ring.style.left=rx+'px';ring.style.top=ry+'px';requestAnimationFrame(loop)})();
+    document.addEventListener('mouseover',function(e){var h=e.target.closest('a,button,input,select,textarea,.chip,.p-card,.teaser');cur.classList.toggle('hover',!!h);ring.classList.toggle('hover',!!h)});
+  }
+
   updateCount();
 })();
