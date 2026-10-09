@@ -599,6 +599,22 @@ h1 i,h2 i,h3 i,.s-h2 i,.hero-h1 i{font-style:normal}
 }
 @media not (pointer:fine){.cursor,.cursor-ring{display:none}}
 
+/* ============ REFINE: lighter headings, roomier brand layout ============ */
+h1,h2,.s-h2,.page-head h1{font-weight:400;letter-spacing:-.005em}
+.s-h2{font-size:clamp(1.7rem,3vw,2.5rem);line-height:1.18}
+.p-name,.tier-name,.drop-name,.edit-card .cap b{font-weight:400}
+.feature .p-name{font-size:clamp(1.6rem,2.4vw,2.1rem)}
+.p-price{font-weight:400}
+#brand .s-h2{max-width:none;margin-bottom:2.4rem}
+@media(min-width:900px){
+  .brand-body{display:grid;grid-template-columns:minmax(0,560px) 340px;column-gap:clamp(3rem,8vw,7rem);max-width:none;align-items:start}
+  .brand-body>*{grid-column:1}
+  .brand-body .brand-float{grid-column:2;grid-row:1/span 6;float:none;width:100%;margin:0}
+  .brand-body .brand-float img{aspect-ratio:4/5}
+  .brand-clearfix::after{display:none}
+  .brand-founders{margin-top:3rem}
+}
+
 /* ===== SHARED KIT: reCAPTCHA and cookie notice ===== */
 .rc-wrap{padding:1rem 1.25rem .9rem;display:flex;flex-direction:column;gap:.55rem}
 .rc-widget{min-height:78px}
