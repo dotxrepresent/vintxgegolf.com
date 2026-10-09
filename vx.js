@@ -103,11 +103,13 @@
         if(stock&&group.getAttribute('data-opt')==='size'&&qin){var max=stock[c.getAttribute('data-val')]||0;qin.max=max;if(+qin.value>max)qin.value=max}
       });
     });
+    $$('.p-select',card).forEach(function(sel){sel.addEventListener('change',function(){var o=sel.options[sel.selectedIndex];if(o&&o.getAttribute('data-img')&&img){img.style.opacity=.2;setTimeout(function(){img.src=o.getAttribute('data-img');img.style.opacity=1},150)}if(hint)hint.textContent=''})});
     $$('.qty button',card).forEach(function(b){b.addEventListener('click',function(){var v=(parseInt(qin.value,10)||1)+(+b.getAttribute('data-step'));v=Math.max(1,v);if(qin.max&&v>+qin.max)v=+qin.max;qin.value=v})});
     var add=$('.p-add',card);
     if(add)add.addEventListener('click',function(){
       var opts={};var missing=null;
       $$('.chips',card).forEach(function(g){var on=$('.chip.on',g);if(on)opts[g.getAttribute('data-opt')]=on.getAttribute('data-val');else if(!missing)missing=g.getAttribute('data-label')});
+      $$('.p-select',card).forEach(function(sel){if(sel.value)opts[sel.getAttribute('data-opt')]=sel.value;else if(!missing)missing=sel.getAttribute('data-label')});
       if(missing){hint.textContent='Please choose a '+missing.toLowerCase();return}
       var qty=Math.max(1,parseInt(qin?qin.value:1,10)||1);
       var id=card.getAttribute('data-id');
@@ -116,7 +118,7 @@
         var max=stock[opts.size]||0,already=inBasket(key);
         if(already+qty>max){hint.textContent=max-already>0?'Only '+(max-already)+' more available in '+opts.size:'All available '+opts.size+' are already in your enquiry';return}
       }
-      var chosenImg=$('.chip.on[data-img]',card);
+      var chosenImg=$('.chip.on[data-img]',card);if(!chosenImg){var sl=$('.p-select',card);if(sl&&sl.selectedIndex>0&&sl.options[sl.selectedIndex].getAttribute('data-img'))chosenImg=sl.options[sl.selectedIndex]}
       addItem({key:key,id:id,name:card.getAttribute('data-name'),variant:opts.colour||card.getAttribute('data-variant')||'',size:opts.size||'',qty:qty,type:type,price:type==='stock'?+card.getAttribute('data-price'):null,img:chosenImg?chosenImg.getAttribute('data-img'):card.getAttribute('data-img')});
       if(hint)hint.textContent='';
     });
