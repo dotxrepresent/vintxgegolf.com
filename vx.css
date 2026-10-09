@@ -615,6 +615,28 @@ h1,h2,.s-h2,.page-head h1{font-weight:400;letter-spacing:-.005em}
   .brand-founders{margin-top:3rem}
 }
 
+/* ============ CLEANER BUTTONS: thin outline, subtle gold on hover ============ */
+.btn,.form-submit{background:transparent;color:var(--black);border:1px solid rgba(26,26,26,.55);padding:.85rem 1.7rem;font-size:.7rem;letter-spacing:.14em;font-weight:700;border-radius:0;box-shadow:none}
+.btn:hover,.form-submit:hover{background:transparent;border-color:var(--gold);color:var(--gold)}
+.btn.ghost{border-color:var(--grey);color:var(--black)}
+.dark .btn,.dark .form-submit,.dark .btn.ghost{background:transparent;color:var(--white);border-color:rgba(255,255,255,.45)}
+.dark .btn:hover,.dark .form-submit:hover,.dark .btn.ghost:hover{border-color:var(--gold);color:var(--gold);background:transparent}
+
+/* ============ HERO CAPTION: centred, quiet, blended into the fade ============ */
+.hero-frame::after{height:30%}
+.hero-cap{position:relative;z-index:2;margin:-1.2rem auto 0;max-width:760px;padding:0 1.5rem 4.2rem;display:flex;flex-direction:column;align-items:center;text-align:center;gap:1.4rem}
+.hero-h1{font-weight:300;font-size:clamp(1.45rem,2.2vw,1.9rem);line-height:1.3;letter-spacing:.01em}
+.hero-sub{margin-top:.35rem;font-size:.9rem;color:#6b6558}
+.hero-actions{justify-content:center;gap:1.8rem}
+@media(max-width:600px){.hero-cap{margin-top:-1.5rem;padding:0 1.5rem 3rem}}
+
+/* ============ BRAND: photo tucked beside the paragraphs ============ */
+@media(min-width:900px){
+  .brand-body{grid-template-columns:minmax(0,540px) 230px;column-gap:3.5rem}
+  .brand-body .brand-float{grid-row:1/span 3;margin-top:.35rem}
+  .brand-body .brand-float img{aspect-ratio:3/4}
+}
+
 /* ===== SHARED KIT: reCAPTCHA and cookie notice ===== */
 .rc-wrap{padding:1rem 1.25rem .9rem;display:flex;flex-direction:column;gap:.55rem}
 .rc-widget{min-height:78px}
